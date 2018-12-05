@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    /* FIGURE OUT WHAT REVENUE GETS TAKEN WHEN A TRADE IS OPENED AND CLOSED // AKA BROKAGE COMMISSION */
-
-    class CallOption : Option
+    class PutOption : Option
     {
         private double _priceMove;
         private double _profitPoint;
@@ -16,7 +14,7 @@ namespace WindowsFormsApp1
         private double _upFrontCost;
 
         public double PriceMove
-        { get {return _priceMove; } set { _priceMove = value; } }
+        { get { return _priceMove; } set { _priceMove = value; } }
 
         public double ProfitPoint
         { get { return _profitPoint; } set { _profitPoint = value; } }
@@ -27,19 +25,19 @@ namespace WindowsFormsApp1
         public int FrontedProfit
         { get { return _frontedProfit; } set { _frontedProfit = 0; } }
 
-        public CallOption()
-        {        }
+        public PutOption()
+        {         }
 
-        public void CallBuy()
+        public void PutBuy()
         {
             double costDivide = (AskPrice - BidPrice) / 2;
 
             double var1 = costDivide + BidPrice;
-            double var2 = (var1 / 100) + StrikePrice;
+            double var2 = StrikePrice - (var1 / 100);
 
-            _upFrontCost = (costDivide + BidPrice) * NumberOfContracts;
+            _upFrontCost = (costDivide + BidPrice) * NumberOfContracts ;
             _profitPoint = var2;
-            _priceMove = var2 - PricePerShare;
+            _priceMove = PricePerShare - var2;
             _frontedProfit = 0;
         }
     }

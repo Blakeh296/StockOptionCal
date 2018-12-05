@@ -26,7 +26,11 @@ namespace WindowsFormsApp1
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
+            // feeper == fee per option contract
+            /* feeper = contract * feeper;
+             FIGURE OUT WHAT REVENUE GETS TAKEN WHEN A TRADE IS OPENED AND CLOSED */
             // Standard TextBox Variables
+
             double pricePerShare;
             double frontedProfit;
             double priceFlux;
@@ -58,20 +62,10 @@ namespace WindowsFormsApp1
 
                     call.CallBuy();
 
-                    // feeper == fee per option contract
-                    /* feeper = contract * feeper;
-                     FIGURE OUT WHAT REVENUE GETS TAKEN WHEN A TRADE IS OPENED AND CLOSED */
-
-                    // TextBox Back Colors
-                    txtUpfrontCost.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPoint.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPercent.BackColor = System.Drawing.Color.LightGreen;
-                    txtMaxProfit.BackColor = System.Drawing.Color.Red;
-
-                    txtProfitPercent.Text = call.PriceMove.ToString("c");
-                    txtUpfrontCost.Text = call.UpfrontCost.ToString("c");
-                    txtProfitPoint.Text = call.ProfitPoint.ToString("c");
-                    txtMaxProfit.Text = call.FrontedProfit.ToString("c");
+                    txtProfitPercent.Text = call.PriceMove.ToString("c"); txtProfitPercent.BackColor = System.Drawing.Color.LightGreen;
+                    txtUpfrontCost.Text = call.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightGreen;
+                    txtProfitPoint.Text = call.ProfitPoint.ToString("c"); txtProfitPoint.BackColor = System.Drawing.Color.LightGreen;
+                    txtMaxProfit.Text = call.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.Red;
 
 
                 }
@@ -79,45 +73,33 @@ namespace WindowsFormsApp1
                 {
 
                 }
-                else if (cbTwo.Text == "Put" && cbOne.Text == "Buy")
+                else if (cbTwo.Text == "Put" && cbOne.Text == "Buy") //  NEEDS WORK,  PUT OPTION CLASS DOESNT WORK
                 {
-                    pricePerShare = double.Parse(txtPricePerShare.Text);
+                    PutOption put = new PutOption();
+
+                    put.PricePerShare = double.Parse(txtPricePerShare.Text);
                     // Save the textbox strings in variabes * 100 to reflect actual cost
-                    ask = double.Parse(txtAsk.Text) * 100;
-                    bid = double.Parse(txtBid.Text) * 100;
-                    contract = int.Parse(txtContract.Text);
+                    put.AskPrice = double.Parse(txtAsk.Text) * 100;
+                    put.BidPrice = double.Parse(txtBid.Text) * 100;
+                    put.NumberOfContracts = int.Parse(txtContract.Text);
+                    put.StrikePrice = double.Parse(txtStrike.Text);
                     // feeper == fee per option contract
-                    feeper = contract * feeper;
+                    //feeper = contract * feeper;
                     // Multiply contract by 100 to represent 100 Stock shares
-                    contract100 = contract * 100;
-                    strike = double.Parse(txtStrike.Text);
-
-                    // Subtract the larger number from the smallest
-                    var1 = ask - bid;
-                    // divide the number by 2 to get the average
-                    varDivide = (var1 / 2);
-                    // add that number to the smallest original number
-                    varPlus = varDivide + bid;
-
-                    var2 = varPlus * contract;
+                    //contract100 = contract * 100;
 
                     txtUpfrontCost.BackColor = System.Drawing.Color.LightGreen;
-                    txtUpfrontCost.Text = var2.ToString("c");
-
-                    pricemove = strike - varDivide;
+                    txtUpfrontCost.Text = put.UpfrontCost.ToString("c");
 
                     txtProfitPoint.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPoint.Text = pricemove.ToString("c");
+                    txtProfitPoint.Text = put.ProfitPoint.ToString("c");
 
-                    priceFlux = strike - pricemove;
 
                     txtProfitPercent.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPercent.Text = priceFlux.ToString("c");
-
-                    frontedProfit = 0;
+                    txtProfitPercent.Text = put.PriceMove.ToString("c");
 
                     txtMaxProfit.BackColor = System.Drawing.Color.Red;
-                    txtMaxProfit.Text = frontedProfit.ToString("c");
+                    txtMaxProfit.Text = put.FrontedProfit.ToString("c");
 
                 }
                 else if (cbTwo.Text == "Put" && cbOne.Text == "Sell")
