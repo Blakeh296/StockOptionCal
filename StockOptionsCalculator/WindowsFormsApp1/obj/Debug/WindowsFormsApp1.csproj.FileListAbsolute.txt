@@ -1,0 +1,30 @@
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Cyberadmin\Documents\Visual Studio 2017\Projects\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+E:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+G:\C#\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
