@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
 
    /* FIGURE OUT WHAT REVENUE GETS TAKEN WHEN A TRADE IS OPENED AND CLOSED // AKA BROKAGE COMMISSION */
 
-    class Option
+    public class Option
     {
         private double _pps;
         private double _ask;

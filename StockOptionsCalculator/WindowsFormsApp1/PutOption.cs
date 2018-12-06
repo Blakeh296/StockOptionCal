@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    class PutOption : Option
+    public class PutOption : Option
     {
         private double _priceMove;
         private double _profitPoint;
-        private int _frontedProfit;
+        private double _frontedProfit;
         private double _upFrontCost;
 
         public double PriceMove
@@ -22,23 +22,30 @@ namespace WindowsFormsApp1
         public double UpfrontCost
         { get { return _upFrontCost; } set { _upFrontCost = value; } }
 
-        public int FrontedProfit
-        { get { return _frontedProfit; } set { _frontedProfit = 0; } }
+        public double FrontedProfit
+        { get { return _frontedProfit; } set { _frontedProfit = value; } }
 
         public PutOption()
-        {         }
+        {        }
 
         public void PutBuy()
         {
-            double costDivide = (AskPrice - BidPrice) / 2;
+            double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
 
-            double var1 = costDivide + BidPrice;
-            double var2 = StrikePrice - (var1 / 100);
-
-            _upFrontCost = (costDivide + BidPrice) * NumberOfContracts ;
-            _profitPoint = var2;
-            _priceMove = PricePerShare - var2;
+            _upFrontCost = contractCost * NumberOfContracts ;
+            _profitPoint = PricePerShare - (contractCost / 100);
+            _priceMove = (contractCost / 100);
             _frontedProfit = 0;
+        }
+
+        public void NakedPut()
+        {
+            double contractCost = (((AskPrice - BidPrice) / 2) +BidPrice);
+
+            _upFrontCost = ((PricePerShare * NumberOfContracts) * 100);
+            _frontedProfit = contractCost * NumberOfContracts;
+            _profitPoint = PricePerShare + (contractCost / 100);
+            _priceMove = ProfitPoint - PricePerShare;
         }
     }
 }

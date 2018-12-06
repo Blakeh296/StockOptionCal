@@ -8,7 +8,7 @@ namespace WindowsFormsApp1
 {
     /* FIGURE OUT WHAT REVENUE GETS TAKEN WHEN A TRADE IS OPENED AND CLOSED // AKA BROKAGE COMMISSION */
 
-    class CallOption : Option
+    public class CallOption : Option
     {
         private double _priceMove;
         private double _profitPoint;
@@ -25,21 +25,18 @@ namespace WindowsFormsApp1
         { get { return _upFrontCost; } set { _upFrontCost = value; } }
 
         public int FrontedProfit
-        { get { return _frontedProfit; } set { _frontedProfit = 0; } }
+        { get { return _frontedProfit; } set { _frontedProfit = value; } }
 
         public CallOption()
         {        }
 
         public void CallBuy()
         {
-            double costDivide = (AskPrice - BidPrice) / 2;
+            double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
 
-            double var1 = costDivide + BidPrice;
-            double var2 = (var1 / 100) + StrikePrice;
-
-            _upFrontCost = (costDivide + BidPrice) * NumberOfContracts;
-            _profitPoint = var2;
-            _priceMove = var2 - PricePerShare;
+            _upFrontCost = contractCost * NumberOfContracts;
+            _profitPoint = PricePerShare + (contractCost / 100);
+            _priceMove = (contractCost / 100);
             _frontedProfit = 0;
         }
     }
