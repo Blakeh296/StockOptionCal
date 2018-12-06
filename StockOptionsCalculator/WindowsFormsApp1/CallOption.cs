@@ -12,7 +12,7 @@ namespace WindowsFormsApp1
     {
         private double _priceMove;
         private double _profitPoint;
-        private int _frontedProfit;
+        private double _frontedProfit;
         private double _upFrontCost;
 
         public double PriceMove
@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         public double UpfrontCost
         { get { return _upFrontCost; } set { _upFrontCost = value; } }
 
-        public int FrontedProfit
+        public double FrontedProfit
         { get { return _frontedProfit; } set { _frontedProfit = value; } }
 
         public CallOption()
@@ -34,10 +34,22 @@ namespace WindowsFormsApp1
         {
             double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
 
+            //upfront cost is essentially risk
             _upFrontCost = contractCost * NumberOfContracts;
             _profitPoint = PricePerShare + (contractCost / 100);
             _priceMove = (contractCost / 100);
             _frontedProfit = 0;
+        }
+
+        public void NakedCall() //NEEDS WORK//NEEDS WORK//NEEDS WORK//NEEDS WORK//NEEDS WORK//NEEDS WORK//NEEDS WORK//NEEDS WORK//NEEDS WORK
+        {
+            double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
+            //upfront cost is essentially risk
+
+            _upFrontCost = ((PricePerShare * NumberOfContracts) * 100);
+            _frontedProfit = contractCost * NumberOfContracts;
+            _profitPoint = PricePerShare - (contractCost / 100);
+            _priceMove = 0;
         }
     }
 }

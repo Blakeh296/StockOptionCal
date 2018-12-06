@@ -32,6 +32,7 @@ namespace WindowsFormsApp1
         {
             double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
 
+            //upfront cost is essentially risk
             _upFrontCost = contractCost * NumberOfContracts ;
             _profitPoint = PricePerShare - (contractCost / 100);
             _priceMove = (contractCost / 100);
@@ -41,7 +42,8 @@ namespace WindowsFormsApp1
         public void NakedPut()
         {
             double contractCost = (((AskPrice - BidPrice) / 2) +BidPrice);
-
+           
+            //upfront cost is essentially risk
             _upFrontCost = ((PricePerShare * NumberOfContracts) * 100);
             _frontedProfit = contractCost * NumberOfContracts;
             _profitPoint = PricePerShare + (contractCost / 100);

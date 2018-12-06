@@ -25,9 +25,12 @@ namespace WindowsFormsApp1
         {
             cbOne.Text = "Buy";
             cbTwo.Text = "Call";
+
+            checkBoxSpread.Checked = false;
+            spreadCalculateToolStripMenuItem.Visible = false;
         }
 
-        private void buttonCalculate_Click(object sender, EventArgs e)
+        private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // feeper == fee per option contract
             /* feeper = contract * feeper;
@@ -57,7 +60,7 @@ namespace WindowsFormsApp1
                 }
                 else if (cbOne.Text == "Sell" && cbTwo.Text == "Call")
                 {
-                    
+
                 }
                 else if (cbOne.Text == "Buy" && cbTwo.Text == "Put")
                 {
@@ -85,7 +88,7 @@ namespace WindowsFormsApp1
 
                     put.NakedPut();
 
-                    
+
                     txtMaxProfit.Text = put.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.LightGreen;
                     txtProfitPoint.Text = put.ProfitPoint.ToString("c"); txtProfitPoint.BackColor = System.Drawing.Color.LightGreen;
                     txtUpfrontCost.Text = put.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightGreen;
@@ -96,9 +99,19 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void checkBoxSpread_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxSpread.Checked == true)
+                spreadCalculateToolStripMenuItem.Visible = true;
+            else if (checkBoxSpread.Checked == false)
+                spreadCalculateToolStripMenuItem.Visible = false;
+        }
     }
 }
