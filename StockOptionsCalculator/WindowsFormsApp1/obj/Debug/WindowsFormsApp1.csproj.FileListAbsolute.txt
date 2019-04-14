@@ -38,3 +38,13 @@ G:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFo
 G:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
 G:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 G:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\C#\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

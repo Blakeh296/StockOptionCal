@@ -23,11 +23,11 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            cbOne.Text = "Buy";
+           /* cbOne.Text = "Buy";
             cbTwo.Text = "Call";
 
             checkBoxSpread.Checked = false;
-            spreadCalculateToolStripMenuItem.Visible = false;
+            spreadCalculateToolStripMenuItem.Visible = false; */
         }
 
         private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -43,56 +43,59 @@ namespace WindowsFormsApp1
             try
             {
 
-                if (cbOne.Text == "Buy" && cbTwo.Text == "Call")
+                if (toolStripComboBox1.Text == "Buy" && toolStripComboBox2.Text == "Call")
                 {
-                    call.PricePerShare = double.Parse(txtPricePerShare.Text);
-                    call.AskPrice = double.Parse(txtAsk.Text) * 100;
-                    call.BidPrice = double.Parse(txtBid.Text) * 100;
+                   /* call.PricePerShare = double.Parse(toolStripTb_PPS.Text);
+                    //call.AskPrice = double.Parse(txtAsk.Text) * 100;
+                    //call.BidPrice = double.Parse(txtBid.Text) * 100;
                     call.NumberOfContracts = int.Parse(txtContract.Text);
                     call.StrikePrice = double.Parse(txtStrike.Text);
 
                     call.CallBuy();
 
-                    txtProfitPercent.Text = call.PriceMove.ToString("c"); txtProfitPercent.BackColor = System.Drawing.Color.LightGreen;
+                    txtMaxLoss.Text = call.PriceMove.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.LightGreen;
                     txtUpfrontCost.Text = call.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPoint.Text = call.ProfitPoint.ToString("c"); txtProfitPoint.BackColor = System.Drawing.Color.LightGreen;
+                    txtBreakEven.Text = call.ProfitPoint.ToString("c"); txtBreakEven.BackColor = System.Drawing.Color.LightGreen;
                     txtMaxProfit.Text = call.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.Red;
+               */
                 }
-                else if (cbOne.Text == "Sell" && cbTwo.Text == "Call")
+                else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Call")
                 {
 
                 }
-                else if (cbOne.Text == "Buy" && cbTwo.Text == "Put")
+                else if (toolStripComboBox1.Text == "Buy" && toolStripComboBox2.Text == "Put")
                 {
-                    put.PricePerShare = double.Parse(txtPricePerShare.Text);
-                    put.AskPrice = double.Parse(txtAsk.Text) * 100;
-                    put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    put.NumberOfContracts = int.Parse(txtContract.Text);
-                    put.StrikePrice = double.Parse(txtStrike.Text);
+                    put.PricePerShare = double.Parse(toolStripTb_PPS.Text);
+                    //put.AskPrice = double.Parse(txtAsk.Text) * 100;
+                    //put.BidPrice = double.Parse(txtBid.Text) * 100;
+                    put.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
+                    put.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
+                    put.StrikePrice = double.Parse(toolStripTb_Strike.Text);
 
                     put.PutBuy();
 
-                    txtUpfrontCost.Text = put.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPoint.Text = put.ProfitPoint.ToString("c"); txtProfitPoint.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPercent.Text = "- " + put.PriceMove.ToString("c"); txtProfitPercent.BackColor = System.Drawing.Color.LightGreen;
-                    txtMaxProfit.Text = put.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.Red;
+                    txtUpfrontCost.Text = put.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.Yellow;
+                    txtMaxLoss.Text = "- " + put.MaxLoss.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.Yellow;
+                    txtBreakEven.Text = put.BreakEven.ToString("c"); txtBreakEven.BackColor = System.Drawing.Color.LightGreen; 
+                    label6.Text = "Profit on Exp.";
+                    txtMaxProfit.Text = put.ProfitPotential.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.LightGreen;
 
                 }
-                else if (cbOne.Text == "Sell" && cbTwo.Text == "Put")
+                else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Put")
                 {
-                    put.PricePerShare = double.Parse(txtPricePerShare.Text);
-                    put.AskPrice = double.Parse(txtAsk.Text) * 100;
-                    put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    put.NumberOfContracts = int.Parse(txtContract.Text);
-                    put.StrikePrice = double.Parse(txtStrike.Text);
+                    put.PricePerShare = double.Parse(toolStripTb_PPS.Text);
+                    put.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
+                    //put.AskPrice = double.Parse(txtAsk.Text) * 100;
+                    //put.BidPrice = double.Parse(txtBid.Text) * 100;
+                    put.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
+                    put.StrikePrice = double.Parse(toolStripTb_Strike.Text);
 
                     put.NakedPut();
 
-
                     txtMaxProfit.Text = put.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPoint.Text = put.ProfitPoint.ToString("c"); txtProfitPoint.BackColor = System.Drawing.Color.LightGreen;
-                    txtUpfrontCost.Text = put.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightGreen;
-                    txtProfitPercent.Text = put.PriceMove.ToString("c"); txtProfitPercent.BackColor = System.Drawing.Color.LightGreen;
+                    txtBreakEven.Text = put.BreakEven.ToString("c"); txtBreakEven.BackColor = System.Drawing.Color.LightGreen;
+                    txtUpfrontCost.Text = put.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightBlue;
+                    txtMaxLoss.Text = put.MaxLoss.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.LightBlue;
                 }
             }
             catch (Exception ex)
@@ -106,12 +109,12 @@ namespace WindowsFormsApp1
             Application.Exit();
         }
 
-        private void checkBoxSpread_CheckedChanged(object sender, EventArgs e)
+       /* private void checkBoxSpread_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxSpread.Checked == true)
                 spreadCalculateToolStripMenuItem.Visible = true;
             else if (checkBoxSpread.Checked == false)
                 spreadCalculateToolStripMenuItem.Visible = false;
-        }
+        }*/
     }
 }

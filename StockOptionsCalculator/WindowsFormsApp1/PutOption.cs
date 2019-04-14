@@ -8,16 +8,17 @@ namespace WindowsFormsApp1
 {
     public class PutOption : Option
     {
-        private double _priceMove;
-        private double _profitPoint;
+        private double _breakEven;
+        private double _profitPotential;
+        private double _maxLoss;
         private double _frontedProfit;
         private double _upFrontCost;
 
-        public double PriceMove
-        { get { return _priceMove; } set { _priceMove = value; } }
+        public double BreakEven
+        { get { return _breakEven; } set { _breakEven = value; } }
 
-        public double ProfitPoint
-        { get { return _profitPoint; } set { _profitPoint = value; } }
+        public double ProfitPotential
+        { get { return _profitPotential; } set { _profitPotential = value; } }
 
         public double UpfrontCost
         { get { return _upFrontCost; } set { _upFrontCost = value; } }
@@ -25,29 +26,30 @@ namespace WindowsFormsApp1
         public double FrontedProfit
         { get { return _frontedProfit; } set { _frontedProfit = value; } }
 
+        public double MaxLoss
+        { get { return _maxLoss; } set { _maxLoss = value; } }
+
         public PutOption()
         {        }
 
         public void PutBuy()
         {
-            double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
+            //double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
 
             //upfront cost is essentially risk
-            _upFrontCost = contractCost * NumberOfContracts ;
-            _profitPoint = PricePerShare - (contractCost / 100);
-            _priceMove = (contractCost / 100);
-            _frontedProfit = 0;
+            _upFrontCost = SetPrice * 100;
+            _breakEven = StrikePrice - SetPrice;
+            _profitPotential = BreakEven * 100;
+            _maxLoss = UpfrontCost;
         }
 
         public void NakedPut()
         {
-            double contractCost = (((AskPrice - BidPrice) / 2) +BidPrice);
-           
             //upfront cost is essentially risk
-            _upFrontCost = ((PricePerShare * NumberOfContracts) * 100);
-            _frontedProfit = contractCost * NumberOfContracts;
-            _profitPoint = PricePerShare + (contractCost / 100);
-            _priceMove = ProfitPoint - PricePerShare;
+            _frontedProfit = SetPrice * 100;
+            _upFrontCost = (StrikePrice * 100) - FrontedProfit;
+            _breakEven = UpfrontCost/100;
+            _maxLoss = BreakEven * 100;
         }
     }
 }

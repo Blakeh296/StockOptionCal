@@ -11,20 +11,24 @@ namespace WindowsFormsApp1
 
     public class Option
     {
+        private double _setPrice;
         private double _pps;
-        private double _ask;
-        private double _bid;
+        //private double _ask;
+       // private double _bid;
         private double _strike;
         private double _countofcontracts;
 
         public double PricePerShare
         { get { return _pps; } set { _pps = value; } }
 
-        public double AskPrice
-        { get { return _ask; } set { _ask = value; } }
+        public double SetPrice
+        { get { return _setPrice; } set { _setPrice = value; } }
 
-        public double BidPrice
-        { get { return _bid; } set { _bid = value; } }
+        //public double AskPrice
+        //{ get { return _ask; } set { _ask = value; } }
+
+        //public double BidPrice
+        //{ get { return _bid; } set { _bid = value; } }
 
         public double StrikePrice
         { get { return _strike; } set { _strike = value; } }
@@ -37,11 +41,12 @@ namespace WindowsFormsApp1
 
         }
 
-        public Option(double pricePerShare, double askPrice, double bidPrice, double strikePrice, int countOfContracts)
+        public Option(double pricePerShare, double setPrice/*double askPrice, double bidPrice*/, double strikePrice, int countOfContracts)
         {
             _pps = pricePerShare;
-            _ask = askPrice;
-            _bid = bidPrice;
+            _setPrice = SetPrice;
+            //_ask = askPrice;
+            //_bid = bidPrice;
             _strike = strikePrice;
             _countofcontracts = countOfContracts;
         }
