@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    public class PutOption : Option
+    public class PosCal : Option
     {
         private double _breakEven;
         private double _profitPotential;
         private double _maxLoss;
         private double _frontedProfit;
         private double _upFrontCost;
+        private double _priceMove;
+        private double _intrinsic;
+        private double _time;
+        private bool _itm;
 
         public double BreakEven
         { get { return _breakEven; } set { _breakEven = value; } }
@@ -29,10 +33,40 @@ namespace WindowsFormsApp1
         public double MaxLoss
         { get { return _maxLoss; } set { _maxLoss = value; } }
 
-        public PutOption()
-        {        }
+        public double Intrinsic
+        { get { return _intrinsic; } set { _intrinsic = value; } }
 
-        public void PutBuy()
+        public double Time
+        { get { return _time; } set { _time = value; } }
+
+        public double PriceMove
+        { get { return _priceMove; } set { _priceMove = value; } }
+
+        public bool ITM
+        { get { return _itm; } set { _itm = value; } }
+
+        public PosCal()
+        { }
+
+        public void BuyCall()
+        {
+            
+
+            _upFrontCost = SetPrice * 100;
+            _breakEven = StrikePrice + SetPrice;
+            _profitPotential = BreakEven * 100;
+            _maxLoss = UpfrontCost;
+            _priceMove = (BreakEven - PricePerShare);
+
+            if (StrikePrice < PricePerShare)
+            {
+                _itm = true; _intrinsic = PricePerShare - StrikePrice;
+                _time = UpfrontCost - Intrinsic;
+            }
+            else
+            { _itm = false; _intrinsic = 0; _time = 0; }
+        }
+        public void BuyPut()
         {
             //double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
 
@@ -41,9 +75,18 @@ namespace WindowsFormsApp1
             _breakEven = StrikePrice - SetPrice;
             _profitPotential = BreakEven * 100;
             _maxLoss = UpfrontCost;
+            _priceMove = -1 * (PricePerShare - BreakEven);
+
+            if (StrikePrice > PricePerShare)
+            {
+                _itm = true; _intrinsic = StrikePrice - PricePerShare;
+                _time = UpfrontCost - Intrinsic;
+            }
+            else
+            { _itm = false; _intrinsic = 0; _time = 0; }
         }
 
-        public void NakedPut()
+        public void SellPut()
         {
             //upfront cost is essentially risk
             _frontedProfit = SetPrice * 100;

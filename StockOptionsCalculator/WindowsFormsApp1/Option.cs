@@ -36,6 +36,9 @@ namespace WindowsFormsApp1
         public double NumberOfContracts
         { get { return _countofcontracts; } set { _countofcontracts = value; } }
 
+
+
+
         public Option()
         {
 

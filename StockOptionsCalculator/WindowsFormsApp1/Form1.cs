@@ -13,8 +13,7 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         Option option = new Option();
-        CallOption call = new CallOption();  
-        PutOption put = new PutOption();
+        PosCal posCal = new PosCal();
 
         public Form1()
         {
@@ -45,19 +44,28 @@ namespace WindowsFormsApp1
 
                 if (toolStripComboBox1.Text == "Buy" && toolStripComboBox2.Text == "Call")
                 {
-                   /* call.PricePerShare = double.Parse(toolStripTb_PPS.Text);
-                    //call.AskPrice = double.Parse(txtAsk.Text) * 100;
-                    //call.BidPrice = double.Parse(txtBid.Text) * 100;
-                    call.NumberOfContracts = int.Parse(txtContract.Text);
-                    call.StrikePrice = double.Parse(txtStrike.Text);
+                    posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
+                    //put.AskPrice = double.Parse(txtAsk.Text) * 100; //put.BidPrice = double.Parse(txtBid.Text) * 100;
+                    posCal.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
+                    posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
+                    posCal.StrikePrice = double.Parse(toolStripTb_Strike.Text);
 
-                    call.CallBuy();
+                    posCal.BuyCall();
 
-                    txtMaxLoss.Text = call.PriceMove.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.LightGreen;
-                    txtUpfrontCost.Text = call.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightGreen;
-                    txtBreakEven.Text = call.ProfitPoint.ToString("c"); txtBreakEven.BackColor = System.Drawing.Color.LightGreen;
-                    txtMaxProfit.Text = call.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.Red;
-               */
+                    txtUpfrontCost.Text = posCal.UpfrontCost.ToString("c"); 
+                    txtBreakEven.Text = posCal.BreakEven.ToString("c"); 
+
+                    if (posCal.ITM == false)
+                    {
+                        label4.Text = "Max Potential"; txtMaxLoss.Text = posCal.ProfitPotential.ToString("c");
+                        label6.Text = "Price Move"; txtMaxProfit.Text = posCal.PriceMove.ToString("c");
+                    }
+                    else
+                    {
+                        label4.Text = "Time Value"; txtMaxLoss.Text = "- " + posCal.Time.ToString("c"); 
+                        label6.Text = "Intrinsic Value"; txtMaxProfit.Text = posCal.Intrinsic.ToString("c");
+                    }
+                    
                 }
                 else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Call")
                 {
@@ -65,37 +73,43 @@ namespace WindowsFormsApp1
                 }
                 else if (toolStripComboBox1.Text == "Buy" && toolStripComboBox2.Text == "Put")
                 {
-                    put.PricePerShare = double.Parse(toolStripTb_PPS.Text);
-                    //put.AskPrice = double.Parse(txtAsk.Text) * 100;
-                    //put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    put.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
-                    put.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
-                    put.StrikePrice = double.Parse(toolStripTb_Strike.Text);
+                    posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
+                    //put.AskPrice = double.Parse(txtAsk.Text) * 100; //put.BidPrice = double.Parse(txtBid.Text) * 100;
+                    posCal.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
+                    posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
+                    posCal.StrikePrice = double.Parse(toolStripTb_Strike.Text);
 
-                    put.PutBuy();
+                    posCal.BuyPut();
 
-                    txtUpfrontCost.Text = put.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.Yellow;
-                    txtMaxLoss.Text = "- " + put.MaxLoss.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.Yellow;
-                    txtBreakEven.Text = put.BreakEven.ToString("c"); txtBreakEven.BackColor = System.Drawing.Color.LightGreen; 
-                    label6.Text = "Profit on Exp.";
-                    txtMaxProfit.Text = put.ProfitPotential.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.LightGreen;
+                    txtUpfrontCost.Text = posCal.UpfrontCost.ToString("c");
+                    txtBreakEven.Text = posCal.BreakEven.ToString("c");
+
+                    if (posCal.ITM == false)
+                    { label4.Text = "Max Potential"; txtMaxLoss.Text = posCal.ProfitPotential.ToString("c");
+                        label6.Text = "Price Move"; txtMaxProfit.Text = posCal.PriceMove.ToString("c");
+                    }
+                    else { label4.Text = "Intrinsic Value"; txtMaxLoss.Text = "- " + posCal.Intrinsic.ToString("c");
+                        label6.Text = "Time Value"; txtMaxProfit.Text = posCal.Time.ToString("c");
+                    }
+                    
+                     
 
                 }
                 else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Put")
                 {
-                    put.PricePerShare = double.Parse(toolStripTb_PPS.Text);
-                    put.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
+                    posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
+                    posCal.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
                     //put.AskPrice = double.Parse(txtAsk.Text) * 100;
                     //put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    put.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
-                    put.StrikePrice = double.Parse(toolStripTb_Strike.Text);
+                    posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
+                    posCal.StrikePrice = double.Parse(toolStripTb_Strike.Text);
 
-                    put.NakedPut();
+                    posCal.SellPut();
 
-                    txtMaxProfit.Text = put.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.LightGreen;
-                    txtBreakEven.Text = put.BreakEven.ToString("c"); txtBreakEven.BackColor = System.Drawing.Color.LightGreen;
-                    txtUpfrontCost.Text = put.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightBlue;
-                    txtMaxLoss.Text = put.MaxLoss.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.LightBlue;
+                    txtMaxProfit.Text = posCal.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.LightGreen;
+                    txtBreakEven.Text = posCal.BreakEven.ToString("c"); txtBreakEven.BackColor = System.Drawing.Color.LightGreen;
+                    txtUpfrontCost.Text = posCal.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightBlue;
+                    txtMaxLoss.Text = posCal.MaxLoss.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.LightBlue;
                 }
             }
             catch (Exception ex)
