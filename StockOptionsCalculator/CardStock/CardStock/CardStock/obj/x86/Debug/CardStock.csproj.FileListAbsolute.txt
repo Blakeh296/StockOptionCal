@@ -1,0 +1,16 @@
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\bin\Debug\CardStock.exe.config
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\bin\Debug\CardStock.exe
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\bin\Debug\CardStock.pdb
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\bin\Debug\System.Web.dll
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\CardStock.csprojAssemblyReference.cache
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\Views\CardDeckView.baml
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\Views\CardDeckView.g.cs
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\App.g.cs
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\CardStock_MarkupCompile.cache
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\CardStock.g.resources
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\Jarloo.CardStock.Properties.Resources.resources
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\CardStock.csproj.GenerateResource.cache
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\CardStock.csproj.CoreCompileInputs.cache
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\CardStock.csproj.CopyComplete
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\CardStock.exe
+C:\Users\MTCStudent\Desktop\CardStock\CardStock\CardStock\obj\x86\Debug\CardStock.pdb

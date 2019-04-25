@@ -91,9 +91,6 @@ namespace WindowsFormsApp1
                     else { label4.Text = "Intrinsic Value"; txtMaxLoss.Text = "- " + posCal.Intrinsic.ToString("c");
                         label6.Text = "Time Value"; txtMaxProfit.Text = posCal.Time.ToString("c");
                     }
-                    
-                     
-
                 }
                 else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Put")
                 {
