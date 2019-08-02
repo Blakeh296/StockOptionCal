@@ -28,9 +28,9 @@ namespace WindowsFormsApp1
         public SpreadCal()
         {        }
 
-        public void VerticalSpread()
+       /* public void VerticalSpread()
         {
-            posCal.FrontedProfit
-        }
+            posCal.FrontedProfit;
+        }*/
     }
 }

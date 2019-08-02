@@ -50,8 +50,8 @@ namespace WindowsFormsApp1
 
         public void BuyCall()
         {
-            _upFrontCost = SetPrice * 100;
-            _breakEven = StrikePrice + SetPrice;
+            _upFrontCost = Premium * 100;
+            _breakEven = StrikePrice + Premium;
             _profitPotential = BreakEven * 100;
             _maxLoss = UpfrontCost;
             _priceMove = (BreakEven - PricePerShare);
@@ -69,9 +69,9 @@ namespace WindowsFormsApp1
             //double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
 
             //upfront cost is essentially risk
-            _upFrontCost = SetPrice * 100;
-            _breakEven = StrikePrice - SetPrice;
-            _profitPotential = BreakEven * 100;
+            _upFrontCost = Premium * 100;
+            _breakEven = StrikePrice - Premium;
+            _profitPotential = (StrikePrice * 100) - UpfrontCost;
             _maxLoss = UpfrontCost;
             _priceMove = -1 * (PricePerShare - BreakEven);
 
@@ -87,10 +87,10 @@ namespace WindowsFormsApp1
         public void SellPut()
         {
             //upfront cost is essentially risk
-            _frontedProfit = SetPrice * 100;
+            _frontedProfit = Premium * 100;
             _upFrontCost = (StrikePrice * 100) - FrontedProfit;
             _breakEven = UpfrontCost/100;
-            _maxLoss = BreakEven * 100;
+            _maxLoss = UpfrontCost;
         }
     }
 }

@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
             spreadCalculateToolStripMenuItem.Visible = false; */
         }
 
-        private void calculateToolStripMenuItem_Click(object sender, EventArgs e)
+        private void TSMenuItem_QuickCalculate_Click(object sender, EventArgs e)
         {
             // feeper == fee per option contract
             /* feeper = contract * feeper;
@@ -46,26 +46,28 @@ namespace WindowsFormsApp1
                 {
                     posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
                     //put.AskPrice = double.Parse(txtAsk.Text) * 100; //put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    posCal.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
+                    posCal.Premium = double.Parse(toolStripTb_SetPrice.Text);
                     posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
                     posCal.StrikePrice = double.Parse(toolStripTb_Strike.Text);
 
                     posCal.BuyCall();
 
-                    txtUpfrontCost.Text = posCal.UpfrontCost.ToString("c"); 
-                    txtBreakEven.Text = posCal.BreakEven.ToString("c"); 
+                    lbOutPut.Items.Clear();
+                    lbOutPut.Items.Add("Upfront Cost: " + posCal.UpfrontCost.ToString("c"));
+                    lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
 
                     if (posCal.ITM == false)
                     {
-                        label4.Text = "Max Potential"; txtMaxLoss.Text = posCal.ProfitPotential.ToString("c");
-                        label6.Text = "Price Move"; txtMaxProfit.Text = posCal.PriceMove.ToString("c");
+                        lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
+                        lbOutPut.Items.Add("Price Move: " + posCal.PriceMove.ToString("c"));
                     }
                     else
                     {
-                        label4.Text = "Time Value"; txtMaxLoss.Text = "- " + posCal.Time.ToString("c"); 
-                        label6.Text = "Intrinsic Value"; txtMaxProfit.Text = posCal.Intrinsic.ToString("c");
+                        lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
+                        lbOutPut.Items.Add("Time Value : " + posCal.Time.ToString("c"));
+                        lbOutPut.Items.Add("Intrinsic Value: " + posCal.Intrinsic.ToString("c"));
                     }
-                    
+
                 }
                 else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Call")
                 {
@@ -75,27 +77,32 @@ namespace WindowsFormsApp1
                 {
                     posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
                     //put.AskPrice = double.Parse(txtAsk.Text) * 100; //put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    posCal.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
+                    posCal.Premium = double.Parse(toolStripTb_SetPrice.Text);
                     posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
                     posCal.StrikePrice = double.Parse(toolStripTb_Strike.Text);
 
                     posCal.BuyPut();
 
-                    txtUpfrontCost.Text = posCal.UpfrontCost.ToString("c");
-                    txtBreakEven.Text = posCal.BreakEven.ToString("c");
+                    lbOutPut.Items.Clear();
+                    lbOutPut.Items.Add("Upfront Cost: " + posCal.UpfrontCost.ToString("c"));
+                    lbOutPut.Items.Add("Break Even: " + posCal.BreakEven.ToString("c"));
 
                     if (posCal.ITM == false)
-                    { label4.Text = "Max Potential"; txtMaxLoss.Text = posCal.ProfitPotential.ToString("c");
-                        label6.Text = "Price Move"; txtMaxProfit.Text = posCal.PriceMove.ToString("c");
+                    {
+                        lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
+                        lbOutPut.Items.Add("Price Move: " + posCal.PriceMove.ToString("c"));
                     }
-                    else { label4.Text = "Intrinsic Value"; txtMaxLoss.Text = "- " + posCal.Intrinsic.ToString("c");
-                        label6.Text = "Time Value"; txtMaxProfit.Text = posCal.Time.ToString("c");
+                    else
+                    {
+                        lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
+                        lbOutPut.Items.Add("Intrinsic Value: " + posCal.Intrinsic.ToString("c"));
+                        lbOutPut.Items.Add("Time Value" + posCal.Time.ToString("c"));
                     }
                 }
                 else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Put")
                 {
                     posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
-                    posCal.SetPrice = double.Parse(toolStripTb_SetPrice.Text);
+                    posCal.Premium = double.Parse(toolStripTb_SetPrice.Text);
                     //put.AskPrice = double.Parse(txtAsk.Text) * 100;
                     //put.BidPrice = double.Parse(txtBid.Text) * 100;
                     posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
@@ -103,10 +110,11 @@ namespace WindowsFormsApp1
 
                     posCal.SellPut();
 
-                    txtMaxProfit.Text = posCal.FrontedProfit.ToString("c"); txtMaxProfit.BackColor = System.Drawing.Color.LightGreen;
-                    txtBreakEven.Text = posCal.BreakEven.ToString("c"); txtBreakEven.BackColor = System.Drawing.Color.LightGreen;
-                    txtUpfrontCost.Text = posCal.UpfrontCost.ToString("c"); txtUpfrontCost.BackColor = System.Drawing.Color.LightBlue;
-                    txtMaxLoss.Text = posCal.MaxLoss.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.LightBlue;
+                    lbOutPut.Items.Add("Immediate (ROI) Return of Investment: " +posCal.FrontedProfit.ToString("c"));
+                    lbOutPut.Items.Add("Price (BE) Break Even: "+posCal.BreakEven.ToString("c"));
+                    lbOutPut.Items.Add("Required Capital: "+ posCal.UpfrontCost.ToString("c"));
+                    lbOutPut.Items.Add("Buy Back Price: "+ posCal.MaxLoss.ToString("c"));
+                    //txtMaxLoss.Text = posCal.MaxLoss.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.LightBlue;
                 }
             }
             catch (Exception ex)
@@ -115,17 +123,27 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void lbOutPut_DoubleClick(object sender, EventArgs e)
+        {
+            lbOutPut.Items.Clear();
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-       /* private void checkBoxSpread_CheckedChanged(object sender, EventArgs e)
+        private void lbOutPut_MouseHover(object sender, EventArgs e)
         {
-            if (checkBoxSpread.Checked == true)
-                spreadCalculateToolStripMenuItem.Visible = true;
-            else if (checkBoxSpread.Checked == false)
-                spreadCalculateToolStripMenuItem.Visible = false;
-        }*/
+            
+        }
+
+        /* private void checkBoxSpread_CheckedChanged(object sender, EventArgs e)
+         {
+             if (checkBoxSpread.Checked == true)
+                 spreadCalculateToolStripMenuItem.Visible = true;
+             else if (checkBoxSpread.Checked == false)
+                 spreadCalculateToolStripMenuItem.Visible = false;
+         }*/
     }
 }
