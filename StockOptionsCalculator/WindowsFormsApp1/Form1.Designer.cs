@@ -28,14 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblUpFrontCosts = new System.Windows.Forms.Label();
-            this.txtUpfrontCost = new System.Windows.Forms.TextBox();
-            this.txtBreakEven = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtMaxProfit = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMaxLoss = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsQuickCal = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,9 +40,6 @@
             this.toolStripTb_Contracts = new System.Windows.Forms.ToolStripTextBox();
             this.TSMenuItem_QuickCalculate = new System.Windows.Forms.ToolStripMenuItem();
             this.TsCalculate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cbSpread = new System.Windows.Forms.CheckBox();
             this.lbOutPut = new System.Windows.Forms.ListBox();
@@ -80,90 +69,11 @@
             this.lblSymbol = new System.Windows.Forms.Label();
             this.lblPPS = new System.Windows.Forms.Label();
             this.txtPPS = new System.Windows.Forms.TextBox();
+            this.lbHelp = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.gbPos2.SuspendLayout();
             this.gbPos1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblUpFrontCosts
-            // 
-            this.lblUpFrontCosts.AutoSize = true;
-            this.lblUpFrontCosts.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUpFrontCosts.Location = new System.Drawing.Point(31, 32);
-            this.lblUpFrontCosts.Name = "lblUpFrontCosts";
-            this.lblUpFrontCosts.Size = new System.Drawing.Size(93, 16);
-            this.lblUpFrontCosts.TabIndex = 10;
-            this.lblUpFrontCosts.Text = "Upfront Cost";
-            // 
-            // txtUpfrontCost
-            // 
-            this.txtUpfrontCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUpfrontCost.Location = new System.Drawing.Point(34, 52);
-            this.txtUpfrontCost.Name = "txtUpfrontCost";
-            this.txtUpfrontCost.Size = new System.Drawing.Size(100, 22);
-            this.txtUpfrontCost.TabIndex = 9;
-            this.txtUpfrontCost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBreakEven
-            // 
-            this.txtBreakEven.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBreakEven.Location = new System.Drawing.Point(34, 94);
-            this.txtBreakEven.Name = "txtBreakEven";
-            this.txtBreakEven.Size = new System.Drawing.Size(100, 22);
-            this.txtBreakEven.TabIndex = 16;
-            this.txtBreakEven.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 75);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 16);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Break Even Point";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(201, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 16);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Upfront Profit";
-            // 
-            // txtMaxProfit
-            // 
-            this.txtMaxProfit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaxProfit.Location = new System.Drawing.Point(199, 94);
-            this.txtMaxProfit.Name = "txtMaxProfit";
-            this.txtMaxProfit.Size = new System.Drawing.Size(100, 22);
-            this.txtMaxProfit.TabIndex = 20;
-            this.txtMaxProfit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(217, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 16);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Max loss";
-            // 
-            // txtMaxLoss
-            // 
-            this.txtMaxLoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaxLoss.Location = new System.Drawing.Point(199, 52);
-            this.txtMaxLoss.Name = "txtMaxLoss";
-            this.txtMaxLoss.Size = new System.Drawing.Size(100, 22);
-            this.txtMaxLoss.TabIndex = 18;
-            this.txtMaxLoss.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // menuStrip1
             // 
@@ -175,7 +85,8 @@
             this.TsCalculate});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(735, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(680, 27);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -261,83 +172,37 @@
             this.TsCalculate.Size = new System.Drawing.Size(72, 21);
             this.TsCalculate.Text = "&Calculate";
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 28);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(711, 378);
-            this.tabControl1.TabIndex = 23;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.DarkGray;
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.txtUpfrontCost);
-            this.tabPage1.Controls.Add(this.txtMaxProfit);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.lblUpFrontCosts);
-            this.tabPage1.Controls.Add(this.txtMaxLoss);
-            this.tabPage1.Controls.Add(this.txtBreakEven);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(652, 352);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.DarkGray;
-            this.tabPage2.Controls.Add(this.btnRefresh);
-            this.tabPage2.Controls.Add(this.cbSpread);
-            this.tabPage2.Controls.Add(this.lbOutPut);
-            this.tabPage2.Controls.Add(this.gbPos2);
-            this.tabPage2.Controls.Add(this.gbPos1);
-            this.tabPage2.Controls.Add(this.tbSymbol);
-            this.tabPage2.Controls.Add(this.lblSymbol);
-            this.tabPage2.Controls.Add(this.lblPPS);
-            this.tabPage2.Controls.Add(this.txtPPS);
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(703, 352);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(550, 318);
+            this.btnRefresh.Location = new System.Drawing.Point(494, 360);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(147, 28);
-            this.btnRefresh.TabIndex = 28;
+            this.btnRefresh.Size = new System.Drawing.Size(173, 39);
+            this.btnRefresh.TabIndex = 37;
             this.btnRefresh.Text = "Calculate/Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
             // 
             // cbSpread
             // 
             this.cbSpread.AutoSize = true;
-            this.cbSpread.Location = new System.Drawing.Point(246, 45);
+            this.cbSpread.Location = new System.Drawing.Point(234, 49);
+            this.cbSpread.Margin = new System.Windows.Forms.Padding(4);
             this.cbSpread.Name = "cbSpread";
-            this.cbSpread.Size = new System.Drawing.Size(80, 24);
-            this.cbSpread.TabIndex = 27;
+            this.cbSpread.Size = new System.Drawing.Size(74, 22);
+            this.cbSpread.TabIndex = 36;
             this.cbSpread.Text = "Spread";
             this.cbSpread.UseVisualStyleBackColor = true;
             // 
             // lbOutPut
             // 
             this.lbOutPut.FormattingEnabled = true;
-            this.lbOutPut.ItemHeight = 20;
-            this.lbOutPut.Location = new System.Drawing.Point(332, 10);
+            this.lbOutPut.ItemHeight = 18;
+            this.lbOutPut.Location = new System.Drawing.Point(342, 13);
+            this.lbOutPut.Margin = new System.Windows.Forms.Padding(4);
             this.lbOutPut.Name = "lbOutPut";
-            this.lbOutPut.Size = new System.Drawing.Size(365, 304);
-            this.lbOutPut.TabIndex = 26;
-            this.lbOutPut.DoubleClick += new System.EventHandler(this.lbOutPut_DoubleClick);
-            this.lbOutPut.MouseHover += new System.EventHandler(this.lbOutPut_MouseHover);
+            this.lbOutPut.Size = new System.Drawing.Size(320, 274);
+            this.lbOutPut.TabIndex = 35;
+            this.lbOutPut.SelectedIndexChanged += new System.EventHandler(this.lbOutPut_SelectedIndexChanged);
             // 
             // gbPos2
             // 
@@ -351,19 +216,22 @@
             this.gbPos2.Controls.Add(this.tbPos2ContractCount);
             this.gbPos2.Controls.Add(this.tbPos2Strike);
             this.gbPos2.Controls.Add(this.tbPos2SetPrice);
-            this.gbPos2.Location = new System.Drawing.Point(10, 213);
+            this.gbPos2.Location = new System.Drawing.Point(14, 263);
+            this.gbPos2.Margin = new System.Windows.Forms.Padding(4);
             this.gbPos2.Name = "gbPos2";
-            this.gbPos2.Size = new System.Drawing.Size(316, 124);
-            this.gbPos2.TabIndex = 25;
+            this.gbPos2.Padding = new System.Windows.Forms.Padding(4);
+            this.gbPos2.Size = new System.Drawing.Size(320, 130);
+            this.gbPos2.TabIndex = 34;
             this.gbPos2.TabStop = false;
             this.gbPos2.Text = "Position2";
             // 
             // cbPos2Call
             // 
             this.cbPos2Call.AutoSize = true;
-            this.cbPos2Call.Location = new System.Drawing.Point(20, 58);
+            this.cbPos2Call.Location = new System.Drawing.Point(10, 63);
+            this.cbPos2Call.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos2Call.Name = "cbPos2Call";
-            this.cbPos2Call.Size = new System.Drawing.Size(54, 24);
+            this.cbPos2Call.Size = new System.Drawing.Size(52, 22);
             this.cbPos2Call.TabIndex = 16;
             this.cbPos2Call.Text = "Call";
             this.cbPos2Call.UseVisualStyleBackColor = true;
@@ -371,9 +239,10 @@
             // cbPos2Buy
             // 
             this.cbPos2Buy.AutoSize = true;
-            this.cbPos2Buy.Location = new System.Drawing.Point(20, 28);
+            this.cbPos2Buy.Location = new System.Drawing.Point(10, 33);
+            this.cbPos2Buy.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos2Buy.Name = "cbPos2Buy";
-            this.cbPos2Buy.Size = new System.Drawing.Size(55, 24);
+            this.cbPos2Buy.Size = new System.Drawing.Size(52, 22);
             this.cbPos2Buy.TabIndex = 14;
             this.cbPos2Buy.Text = "Buy";
             this.cbPos2Buy.UseVisualStyleBackColor = true;
@@ -381,18 +250,20 @@
             // lblStrike
             // 
             this.lblStrike.AutoSize = true;
-            this.lblStrike.Location = new System.Drawing.Point(178, 59);
+            this.lblStrike.Location = new System.Drawing.Point(157, 67);
+            this.lblStrike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStrike.Name = "lblStrike";
-            this.lblStrike.Size = new System.Drawing.Size(58, 20);
+            this.lblStrike.Size = new System.Drawing.Size(54, 18);
             this.lblStrike.TabIndex = 23;
             this.lblStrike.Text = "Strike :";
             // 
             // cbPos2Sell
             // 
             this.cbPos2Sell.AutoSize = true;
-            this.cbPos2Sell.Location = new System.Drawing.Point(81, 28);
+            this.cbPos2Sell.Location = new System.Drawing.Point(70, 33);
+            this.cbPos2Sell.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos2Sell.Name = "cbPos2Sell";
-            this.cbPos2Sell.Size = new System.Drawing.Size(54, 24);
+            this.cbPos2Sell.Size = new System.Drawing.Size(51, 22);
             this.cbPos2Sell.TabIndex = 15;
             this.cbPos2Sell.Text = "Sell";
             this.cbPos2Sell.UseVisualStyleBackColor = true;
@@ -400,18 +271,20 @@
             // lblPos2SetPrice
             // 
             this.lblPos2SetPrice.AutoSize = true;
-            this.lblPos2SetPrice.Location = new System.Drawing.Point(155, 27);
+            this.lblPos2SetPrice.Location = new System.Drawing.Point(138, 36);
+            this.lblPos2SetPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos2SetPrice.Name = "lblPos2SetPrice";
-            this.lblPos2SetPrice.Size = new System.Drawing.Size(81, 20);
+            this.lblPos2SetPrice.Size = new System.Drawing.Size(76, 18);
             this.lblPos2SetPrice.TabIndex = 22;
             this.lblPos2SetPrice.Text = "Set Price :";
             // 
             // cbPos2Put
             // 
             this.cbPos2Put.AutoSize = true;
-            this.cbPos2Put.Location = new System.Drawing.Point(80, 58);
+            this.cbPos2Put.Location = new System.Drawing.Point(70, 63);
+            this.cbPos2Put.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos2Put.Name = "cbPos2Put";
-            this.cbPos2Put.Size = new System.Drawing.Size(52, 24);
+            this.cbPos2Put.Size = new System.Drawing.Size(49, 22);
             this.cbPos2Put.TabIndex = 17;
             this.cbPos2Put.Text = "Put";
             this.cbPos2Put.UseVisualStyleBackColor = true;
@@ -419,31 +292,35 @@
             // lblPos2ContractCount
             // 
             this.lblPos2ContractCount.AutoSize = true;
-            this.lblPos2ContractCount.Location = new System.Drawing.Point(39, 91);
+            this.lblPos2ContractCount.Location = new System.Drawing.Point(27, 97);
+            this.lblPos2ContractCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos2ContractCount.Name = "lblPos2ContractCount";
-            this.lblPos2ContractCount.Size = new System.Drawing.Size(197, 20);
+            this.lblPos2ContractCount.Size = new System.Drawing.Size(185, 18);
             this.lblPos2ContractCount.TabIndex = 21;
             this.lblPos2ContractCount.Text = "# of Contracts Purchased :";
             // 
             // tbPos2ContractCount
             // 
-            this.tbPos2ContractCount.Location = new System.Drawing.Point(242, 88);
+            this.tbPos2ContractCount.Location = new System.Drawing.Point(222, 94);
+            this.tbPos2ContractCount.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2ContractCount.Name = "tbPos2ContractCount";
-            this.tbPos2ContractCount.Size = new System.Drawing.Size(58, 26);
+            this.tbPos2ContractCount.Size = new System.Drawing.Size(85, 24);
             this.tbPos2ContractCount.TabIndex = 18;
             // 
             // tbPos2Strike
             // 
-            this.tbPos2Strike.Location = new System.Drawing.Point(242, 56);
+            this.tbPos2Strike.Location = new System.Drawing.Point(222, 62);
+            this.tbPos2Strike.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2Strike.Name = "tbPos2Strike";
-            this.tbPos2Strike.Size = new System.Drawing.Size(58, 26);
+            this.tbPos2Strike.Size = new System.Drawing.Size(85, 24);
             this.tbPos2Strike.TabIndex = 20;
             // 
             // tbPos2SetPrice
             // 
-            this.tbPos2SetPrice.Location = new System.Drawing.Point(242, 24);
+            this.tbPos2SetPrice.Location = new System.Drawing.Point(222, 30);
+            this.tbPos2SetPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2SetPrice.Name = "tbPos2SetPrice";
-            this.tbPos2SetPrice.Size = new System.Drawing.Size(58, 26);
+            this.tbPos2SetPrice.Size = new System.Drawing.Size(85, 24);
             this.tbPos2SetPrice.TabIndex = 19;
             // 
             // gbPos1
@@ -458,19 +335,22 @@
             this.gbPos1.Controls.Add(this.lblPos1ContractCount);
             this.gbPos1.Controls.Add(this.lblPos1SetPrice);
             this.gbPos1.Controls.Add(this.lblPos1Strike);
-            this.gbPos1.Location = new System.Drawing.Point(10, 85);
+            this.gbPos1.Location = new System.Drawing.Point(13, 125);
+            this.gbPos1.Margin = new System.Windows.Forms.Padding(4);
             this.gbPos1.Name = "gbPos1";
-            this.gbPos1.Size = new System.Drawing.Size(316, 124);
-            this.gbPos1.TabIndex = 24;
+            this.gbPos1.Padding = new System.Windows.Forms.Padding(4);
+            this.gbPos1.Size = new System.Drawing.Size(321, 130);
+            this.gbPos1.TabIndex = 33;
             this.gbPos1.TabStop = false;
             this.gbPos1.Text = "Position 1";
             // 
             // cbPos1Call
             // 
             this.cbPos1Call.AutoSize = true;
-            this.cbPos1Call.Location = new System.Drawing.Point(19, 58);
+            this.cbPos1Call.Location = new System.Drawing.Point(8, 60);
+            this.cbPos1Call.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos1Call.Name = "cbPos1Call";
-            this.cbPos1Call.Size = new System.Drawing.Size(54, 24);
+            this.cbPos1Call.Size = new System.Drawing.Size(52, 22);
             this.cbPos1Call.TabIndex = 6;
             this.cbPos1Call.Text = "Call";
             this.cbPos1Call.UseVisualStyleBackColor = true;
@@ -478,9 +358,10 @@
             // cbPos1Buy
             // 
             this.cbPos1Buy.AutoSize = true;
-            this.cbPos1Buy.Location = new System.Drawing.Point(19, 28);
+            this.cbPos1Buy.Location = new System.Drawing.Point(8, 30);
+            this.cbPos1Buy.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos1Buy.Name = "cbPos1Buy";
-            this.cbPos1Buy.Size = new System.Drawing.Size(55, 24);
+            this.cbPos1Buy.Size = new System.Drawing.Size(52, 22);
             this.cbPos1Buy.TabIndex = 4;
             this.cbPos1Buy.Text = "Buy";
             this.cbPos1Buy.UseVisualStyleBackColor = true;
@@ -488,9 +369,10 @@
             // j
             // 
             this.j.AutoSize = true;
-            this.j.Location = new System.Drawing.Point(80, 28);
+            this.j.Location = new System.Drawing.Point(68, 30);
+            this.j.Margin = new System.Windows.Forms.Padding(4);
             this.j.Name = "j";
-            this.j.Size = new System.Drawing.Size(54, 24);
+            this.j.Size = new System.Drawing.Size(51, 22);
             this.j.TabIndex = 5;
             this.j.Text = "Sell";
             this.j.UseVisualStyleBackColor = true;
@@ -498,113 +380,142 @@
             // cbPos1Put
             // 
             this.cbPos1Put.AutoSize = true;
-            this.cbPos1Put.Location = new System.Drawing.Point(79, 58);
+            this.cbPos1Put.Location = new System.Drawing.Point(68, 60);
+            this.cbPos1Put.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos1Put.Name = "cbPos1Put";
-            this.cbPos1Put.Size = new System.Drawing.Size(52, 24);
+            this.cbPos1Put.Size = new System.Drawing.Size(49, 22);
             this.cbPos1Put.TabIndex = 7;
             this.cbPos1Put.Text = "Put";
             this.cbPos1Put.UseVisualStyleBackColor = true;
             // 
             // tbPos1ContractCount
             // 
-            this.tbPos1ContractCount.Location = new System.Drawing.Point(242, 88);
+            this.tbPos1ContractCount.Location = new System.Drawing.Point(223, 93);
+            this.tbPos1ContractCount.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1ContractCount.Name = "tbPos1ContractCount";
-            this.tbPos1ContractCount.Size = new System.Drawing.Size(58, 26);
+            this.tbPos1ContractCount.Size = new System.Drawing.Size(85, 24);
             this.tbPos1ContractCount.TabIndex = 8;
             // 
             // tbPos1SetPrice
             // 
-            this.tbPos1SetPrice.Location = new System.Drawing.Point(242, 22);
+            this.tbPos1SetPrice.Location = new System.Drawing.Point(223, 28);
+            this.tbPos1SetPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1SetPrice.Name = "tbPos1SetPrice";
-            this.tbPos1SetPrice.Size = new System.Drawing.Size(58, 26);
+            this.tbPos1SetPrice.Size = new System.Drawing.Size(85, 24);
             this.tbPos1SetPrice.TabIndex = 9;
             // 
             // tbPos1Strike
             // 
-            this.tbPos1Strike.Location = new System.Drawing.Point(242, 56);
+            this.tbPos1Strike.Location = new System.Drawing.Point(223, 61);
+            this.tbPos1Strike.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1Strike.Name = "tbPos1Strike";
-            this.tbPos1Strike.Size = new System.Drawing.Size(58, 26);
+            this.tbPos1Strike.Size = new System.Drawing.Size(85, 24);
             this.tbPos1Strike.TabIndex = 10;
             // 
             // lblPos1ContractCount
             // 
             this.lblPos1ContractCount.AutoSize = true;
-            this.lblPos1ContractCount.Location = new System.Drawing.Point(39, 91);
+            this.lblPos1ContractCount.Location = new System.Drawing.Point(27, 96);
+            this.lblPos1ContractCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos1ContractCount.Name = "lblPos1ContractCount";
-            this.lblPos1ContractCount.Size = new System.Drawing.Size(197, 20);
+            this.lblPos1ContractCount.Size = new System.Drawing.Size(185, 18);
             this.lblPos1ContractCount.TabIndex = 11;
             this.lblPos1ContractCount.Text = "# of Contracts Purchased :";
             // 
             // lblPos1SetPrice
             // 
             this.lblPos1SetPrice.AutoSize = true;
-            this.lblPos1SetPrice.Location = new System.Drawing.Point(155, 28);
+            this.lblPos1SetPrice.Location = new System.Drawing.Point(136, 31);
+            this.lblPos1SetPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos1SetPrice.Name = "lblPos1SetPrice";
-            this.lblPos1SetPrice.Size = new System.Drawing.Size(81, 20);
+            this.lblPos1SetPrice.Size = new System.Drawing.Size(76, 18);
             this.lblPos1SetPrice.TabIndex = 12;
             this.lblPos1SetPrice.Text = "Set Price :";
             // 
             // lblPos1Strike
             // 
             this.lblPos1Strike.AutoSize = true;
-            this.lblPos1Strike.Location = new System.Drawing.Point(178, 56);
+            this.lblPos1Strike.Location = new System.Drawing.Point(158, 64);
+            this.lblPos1Strike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos1Strike.Name = "lblPos1Strike";
-            this.lblPos1Strike.Size = new System.Drawing.Size(58, 20);
+            this.lblPos1Strike.Size = new System.Drawing.Size(54, 18);
             this.lblPos1Strike.TabIndex = 13;
             this.lblPos1Strike.Text = "Strike :";
             // 
             // tbSymbol
             // 
-            this.tbSymbol.Location = new System.Drawing.Point(148, 11);
+            this.tbSymbol.Location = new System.Drawing.Point(141, 49);
+            this.tbSymbol.Margin = new System.Windows.Forms.Padding(4);
             this.tbSymbol.Name = "tbSymbol";
-            this.tbSymbol.Size = new System.Drawing.Size(58, 26);
-            this.tbSymbol.TabIndex = 3;
+            this.tbSymbol.Size = new System.Drawing.Size(85, 24);
+            this.tbSymbol.TabIndex = 32;
             // 
             // lblSymbol
             // 
             this.lblSymbol.AutoSize = true;
-            this.lblSymbol.Location = new System.Drawing.Point(19, 15);
+            this.lblSymbol.Location = new System.Drawing.Point(14, 52);
+            this.lblSymbol.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSymbol.Name = "lblSymbol";
-            this.lblSymbol.Size = new System.Drawing.Size(112, 20);
-            this.lblSymbol.TabIndex = 2;
+            this.lblSymbol.Size = new System.Drawing.Size(104, 18);
+            this.lblSymbol.TabIndex = 31;
             this.lblSymbol.Text = "Index Symbol :";
             // 
             // lblPPS
             // 
             this.lblPPS.AutoSize = true;
-            this.lblPPS.Location = new System.Drawing.Point(15, 49);
+            this.lblPPS.Location = new System.Drawing.Point(13, 86);
+            this.lblPPS.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPPS.Name = "lblPPS";
-            this.lblPPS.Size = new System.Drawing.Size(127, 20);
-            this.lblPPS.TabIndex = 1;
+            this.lblPPS.Size = new System.Drawing.Size(120, 18);
+            this.lblPPS.TabIndex = 30;
             this.lblPPS.Text = "Price Per Share :";
             // 
             // txtPPS
             // 
-            this.txtPPS.Location = new System.Drawing.Point(148, 43);
+            this.txtPPS.Location = new System.Drawing.Point(141, 83);
+            this.txtPPS.Margin = new System.Windows.Forms.Padding(4);
             this.txtPPS.Name = "txtPPS";
-            this.txtPPS.Size = new System.Drawing.Size(58, 26);
-            this.txtPPS.TabIndex = 0;
+            this.txtPPS.Size = new System.Drawing.Size(85, 24);
+            this.txtPPS.TabIndex = 29;
+            // 
+            // lbHelp
+            // 
+            this.lbHelp.BackColor = System.Drawing.Color.White;
+            this.lbHelp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbHelp.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lbHelp.Location = new System.Drawing.Point(342, 291);
+            this.lbHelp.Name = "lbHelp";
+            this.lbHelp.Size = new System.Drawing.Size(320, 65);
+            this.lbHelp.TabIndex = 38;
+            this.lbHelp.Text = "*HINT DBL Click to clear output.  Single Click to read txt.";
+            this.lbHelp.DoubleClick += new System.EventHandler(this.lbHelp_DoubleClick);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(735, 444);
-            this.Controls.Add(this.tabControl1);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(680, 407);
+            this.Controls.Add(this.lbHelp);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.cbSpread);
+            this.Controls.Add(this.lbOutPut);
+            this.Controls.Add(this.gbPos2);
+            this.Controls.Add(this.gbPos1);
+            this.Controls.Add(this.tbSymbol);
+            this.Controls.Add(this.lblSymbol);
+            this.Controls.Add(this.lblPPS);
+            this.Controls.Add(this.txtPPS);
             this.Controls.Add(this.menuStrip1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "StockOptions Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.gbPos2.ResumeLayout(false);
             this.gbPos2.PerformLayout();
             this.gbPos1.ResumeLayout(false);
@@ -615,14 +526,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblUpFrontCosts;
-        private System.Windows.Forms.TextBox txtUpfrontCost;
-        private System.Windows.Forms.TextBox txtBreakEven;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtMaxLoss;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMaxProfit;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsQuickCal;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
@@ -635,9 +538,8 @@
         private System.Windows.Forms.ToolStripTextBox toolStripTb_Contracts;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem TSMenuItem_QuickCalculate;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.CheckBox cbSpread;
         private System.Windows.Forms.ListBox lbOutPut;
         private System.Windows.Forms.GroupBox gbPos2;
         private System.Windows.Forms.CheckBox cbPos2Call;
@@ -665,8 +567,7 @@
         private System.Windows.Forms.Label lblSymbol;
         private System.Windows.Forms.Label lblPPS;
         private System.Windows.Forms.TextBox txtPPS;
-        private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.CheckBox cbSpread;
+        private System.Windows.Forms.Label lbHelp;
     }
 }
 

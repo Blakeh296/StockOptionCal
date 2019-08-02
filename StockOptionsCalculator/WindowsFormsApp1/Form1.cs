@@ -123,19 +123,19 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void lbOutPut_DoubleClick(object sender, EventArgs e)
-        {
-            lbOutPut.Items.Clear();
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void lbOutPut_MouseHover(object sender, EventArgs e)
+        private void lbOutPut_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            lbHelp.Text = lbOutPut.Text.ToString() + " ** Double Click HERE to clear results **";
+        }
+
+        private void lbHelp_DoubleClick(object sender, EventArgs e)
+        {
+            lbOutPut.Items.Clear(); lbHelp.Text = "*HINTSingle Click to read txt. DBL Click to clear results.";
         }
 
         /* private void checkBoxSpread_CheckedChanged(object sender, EventArgs e)
