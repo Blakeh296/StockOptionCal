@@ -50,15 +50,15 @@ namespace WindowsFormsApp1
 
         public void BuyCall()
         {
-            _upFrontCost = Premium * 100;
+            _upFrontCost = (Premium * 100) * NumberOfContracts;
             _breakEven = StrikePrice + Premium;
-            _profitPotential = BreakEven * 100;
+            _profitPotential = (BreakEven * 100) * NumberOfContracts;
             _maxLoss = UpfrontCost;
             _priceMove = (BreakEven - PricePerShare);
 
             if (StrikePrice < PricePerShare)
             {
-                _itm = true; _intrinsic = PricePerShare - StrikePrice;
+                _itm = true; _intrinsic = (PricePerShare - StrikePrice);
                 _time = UpfrontCost - Intrinsic;
             }
             else
@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
             //double contractCost = (((AskPrice - BidPrice) / 2) + BidPrice);
 
             //upfront cost is essentially risk
-            _upFrontCost = Premium * 100;
+            _upFrontCost = (Premium * 100) * NumberOfContracts;
             _breakEven = StrikePrice - Premium;
             _profitPotential = (StrikePrice * 100) - UpfrontCost;
             _maxLoss = UpfrontCost;

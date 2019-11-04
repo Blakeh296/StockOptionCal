@@ -40,6 +40,10 @@
             this.toolStripTb_Contracts = new System.Windows.Forms.ToolStripTextBox();
             this.TSMenuItem_QuickCalculate = new System.Windows.Forms.ToolStripMenuItem();
             this.TsCalculate = new System.Windows.Forms.ToolStripMenuItem();
+            this.trainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sellPutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buyPutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buyCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cbSpread = new System.Windows.Forms.CheckBox();
             this.lbOutPut = new System.Windows.Forms.ListBox();
@@ -57,10 +61,10 @@
             this.gbPos1 = new System.Windows.Forms.GroupBox();
             this.cbPos1Call = new System.Windows.Forms.CheckBox();
             this.cbPos1Buy = new System.Windows.Forms.CheckBox();
-            this.j = new System.Windows.Forms.CheckBox();
+            this.cbPos1Sell = new System.Windows.Forms.CheckBox();
             this.cbPos1Put = new System.Windows.Forms.CheckBox();
             this.tbPos1ContractCount = new System.Windows.Forms.TextBox();
-            this.tbPos1SetPrice = new System.Windows.Forms.TextBox();
+            this.tbPos1Premium = new System.Windows.Forms.TextBox();
             this.tbPos1Strike = new System.Windows.Forms.TextBox();
             this.lblPos1ContractCount = new System.Windows.Forms.Label();
             this.lblPos1SetPrice = new System.Windows.Forms.Label();
@@ -68,7 +72,7 @@
             this.tbSymbol = new System.Windows.Forms.TextBox();
             this.lblSymbol = new System.Windows.Forms.Label();
             this.lblPPS = new System.Windows.Forms.Label();
-            this.txtPPS = new System.Windows.Forms.TextBox();
+            this.tbPPS = new System.Windows.Forms.TextBox();
             this.lbHelp = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.gbPos2.SuspendLayout();
@@ -82,7 +86,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem,
             this.tsQuickCal,
-            this.TsCalculate});
+            this.TsCalculate,
+            this.trainingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
@@ -172,6 +177,37 @@
             this.TsCalculate.Size = new System.Drawing.Size(72, 21);
             this.TsCalculate.Text = "&Calculate";
             // 
+            // trainingToolStripMenuItem
+            // 
+            this.trainingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sellPutToolStripMenuItem,
+            this.buyPutToolStripMenuItem,
+            this.buyCallToolStripMenuItem});
+            this.trainingToolStripMenuItem.Name = "trainingToolStripMenuItem";
+            this.trainingToolStripMenuItem.Size = new System.Drawing.Size(66, 21);
+            this.trainingToolStripMenuItem.Text = "&Training";
+            // 
+            // sellPutToolStripMenuItem
+            // 
+            this.sellPutToolStripMenuItem.Name = "sellPutToolStripMenuItem";
+            this.sellPutToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.sellPutToolStripMenuItem.Text = "&Sell Put";
+            this.sellPutToolStripMenuItem.Click += new System.EventHandler(this.sellPutToolStripMenuItem_Click);
+            // 
+            // buyPutToolStripMenuItem
+            // 
+            this.buyPutToolStripMenuItem.Name = "buyPutToolStripMenuItem";
+            this.buyPutToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.buyPutToolStripMenuItem.Text = "&Buy Put";
+            this.buyPutToolStripMenuItem.Click += new System.EventHandler(this.buyPutToolStripMenuItem_Click);
+            // 
+            // buyCallToolStripMenuItem
+            // 
+            this.buyCallToolStripMenuItem.Name = "buyCallToolStripMenuItem";
+            this.buyCallToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.buyCallToolStripMenuItem.Text = "&Buy Call";
+            this.buyCallToolStripMenuItem.Click += new System.EventHandler(this.buyCallToolStripMenuItem_Click);
+            // 
             // btnRefresh
             // 
             this.btnRefresh.Location = new System.Drawing.Point(494, 360);
@@ -181,6 +217,7 @@
             this.btnRefresh.TabIndex = 37;
             this.btnRefresh.Text = "Calculate/Refresh";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // cbSpread
             // 
@@ -327,10 +364,10 @@
             // 
             this.gbPos1.Controls.Add(this.cbPos1Call);
             this.gbPos1.Controls.Add(this.cbPos1Buy);
-            this.gbPos1.Controls.Add(this.j);
+            this.gbPos1.Controls.Add(this.cbPos1Sell);
             this.gbPos1.Controls.Add(this.cbPos1Put);
             this.gbPos1.Controls.Add(this.tbPos1ContractCount);
-            this.gbPos1.Controls.Add(this.tbPos1SetPrice);
+            this.gbPos1.Controls.Add(this.tbPos1Premium);
             this.gbPos1.Controls.Add(this.tbPos1Strike);
             this.gbPos1.Controls.Add(this.lblPos1ContractCount);
             this.gbPos1.Controls.Add(this.lblPos1SetPrice);
@@ -366,16 +403,16 @@
             this.cbPos1Buy.Text = "Buy";
             this.cbPos1Buy.UseVisualStyleBackColor = true;
             // 
-            // j
+            // cbPos1Sell
             // 
-            this.j.AutoSize = true;
-            this.j.Location = new System.Drawing.Point(68, 30);
-            this.j.Margin = new System.Windows.Forms.Padding(4);
-            this.j.Name = "j";
-            this.j.Size = new System.Drawing.Size(51, 22);
-            this.j.TabIndex = 5;
-            this.j.Text = "Sell";
-            this.j.UseVisualStyleBackColor = true;
+            this.cbPos1Sell.AutoSize = true;
+            this.cbPos1Sell.Location = new System.Drawing.Point(68, 30);
+            this.cbPos1Sell.Margin = new System.Windows.Forms.Padding(4);
+            this.cbPos1Sell.Name = "cbPos1Sell";
+            this.cbPos1Sell.Size = new System.Drawing.Size(51, 22);
+            this.cbPos1Sell.TabIndex = 5;
+            this.cbPos1Sell.Text = "Sell";
+            this.cbPos1Sell.UseVisualStyleBackColor = true;
             // 
             // cbPos1Put
             // 
@@ -396,13 +433,13 @@
             this.tbPos1ContractCount.Size = new System.Drawing.Size(85, 24);
             this.tbPos1ContractCount.TabIndex = 8;
             // 
-            // tbPos1SetPrice
+            // tbPos1Premium
             // 
-            this.tbPos1SetPrice.Location = new System.Drawing.Point(223, 28);
-            this.tbPos1SetPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.tbPos1SetPrice.Name = "tbPos1SetPrice";
-            this.tbPos1SetPrice.Size = new System.Drawing.Size(85, 24);
-            this.tbPos1SetPrice.TabIndex = 9;
+            this.tbPos1Premium.Location = new System.Drawing.Point(223, 28);
+            this.tbPos1Premium.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPos1Premium.Name = "tbPos1Premium";
+            this.tbPos1Premium.Size = new System.Drawing.Size(85, 24);
+            this.tbPos1Premium.TabIndex = 9;
             // 
             // tbPos1Strike
             // 
@@ -470,13 +507,13 @@
             this.lblPPS.TabIndex = 30;
             this.lblPPS.Text = "Price Per Share :";
             // 
-            // txtPPS
+            // tbPPS
             // 
-            this.txtPPS.Location = new System.Drawing.Point(141, 83);
-            this.txtPPS.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPPS.Name = "txtPPS";
-            this.txtPPS.Size = new System.Drawing.Size(85, 24);
-            this.txtPPS.TabIndex = 29;
+            this.tbPPS.Location = new System.Drawing.Point(141, 83);
+            this.tbPPS.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPPS.Name = "tbPPS";
+            this.tbPPS.Size = new System.Drawing.Size(85, 24);
+            this.tbPPS.TabIndex = 29;
             // 
             // lbHelp
             // 
@@ -488,6 +525,7 @@
             this.lbHelp.Size = new System.Drawing.Size(320, 65);
             this.lbHelp.TabIndex = 38;
             this.lbHelp.Text = "*HINT DBL Click to clear output.  Single Click to read txt.";
+            this.lbHelp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbHelp.DoubleClick += new System.EventHandler(this.lbHelp_DoubleClick);
             // 
             // Form1
@@ -505,7 +543,7 @@
             this.Controls.Add(this.tbSymbol);
             this.Controls.Add(this.lblSymbol);
             this.Controls.Add(this.lblPPS);
-            this.Controls.Add(this.txtPPS);
+            this.Controls.Add(this.tbPPS);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -555,10 +593,10 @@
         private System.Windows.Forms.GroupBox gbPos1;
         private System.Windows.Forms.CheckBox cbPos1Call;
         private System.Windows.Forms.CheckBox cbPos1Buy;
-        private System.Windows.Forms.CheckBox j;
+        private System.Windows.Forms.CheckBox cbPos1Sell;
         private System.Windows.Forms.CheckBox cbPos1Put;
         private System.Windows.Forms.TextBox tbPos1ContractCount;
-        private System.Windows.Forms.TextBox tbPos1SetPrice;
+        private System.Windows.Forms.TextBox tbPos1Premium;
         private System.Windows.Forms.TextBox tbPos1Strike;
         private System.Windows.Forms.Label lblPos1ContractCount;
         private System.Windows.Forms.Label lblPos1SetPrice;
@@ -566,8 +604,12 @@
         private System.Windows.Forms.TextBox tbSymbol;
         private System.Windows.Forms.Label lblSymbol;
         private System.Windows.Forms.Label lblPPS;
-        private System.Windows.Forms.TextBox txtPPS;
+        private System.Windows.Forms.TextBox tbPPS;
         private System.Windows.Forms.Label lbHelp;
+        private System.Windows.Forms.ToolStripMenuItem trainingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sellPutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buyPutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buyCallToolStripMenuItem;
     }
 }
 

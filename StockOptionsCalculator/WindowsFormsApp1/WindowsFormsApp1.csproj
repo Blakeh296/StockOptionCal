@@ -45,6 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TrainingBuyCalls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingBuyCalls.Designer.cs">
+      <DependentUpon>TrainingBuyCalls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainingBuyPuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingBuyPuts.Designer.cs">
+      <DependentUpon>TrainingBuyPuts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PosAutoCal.cs" />
+    <Compile Include="TrainingSellPuts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainingSellPuts.Designer.cs">
+      <DependentUpon>TrainingSellPuts.cs</DependentUpon>
+    </Compile>
     <Compile Include="SpreadCal.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
