@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            gbPos2.Visible = false;
            /* cbOne.Text = "Buy";
             cbTwo.Text = "Call";
 
@@ -174,12 +175,15 @@ namespace WindowsFormsApp1
                             posCal.Premium = double.Parse(tbPos1Premium.Text);
                             posCal.NumberOfContracts = int.Parse(tbPos1ContractCount.Text);
                             posCal.StrikePrice = double.Parse(tbPos1Strike.Text);
+
                             posCal.BuyCall();
 
-                            lbOutPut.Items.Add(" ");
-                            lbOutPut.Items.Add(posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - "+posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
                         " - " + posCal.StrikePrice.ToString() + " Call @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add("Upfront Cost & Max Loss: " + posCal.UpfrontCost.ToString("c"));
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add(" ");
 
                             if (posCal.ITM == false)
                             {
@@ -203,11 +207,16 @@ namespace WindowsFormsApp1
                             posCal.Premium = double.Parse(tbPos1Premium.Text);
                             posCal.NumberOfContracts = int.Parse(tbPos1ContractCount.Text);
                             posCal.StrikePrice = double.Parse(tbPos1Strike.Text);
+
                             posCal.BuyPut();
 
-                            lbOutPut.Items.Add(" ");
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - "+posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
+                        " - " + posCal.StrikePrice.ToString() + " put @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add("Upfront Cost: " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add("Break Even: " + posCal.BreakEven.ToString("c"));
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add(" ");
 
                             if (posCal.ITM == false)
                             {
@@ -229,7 +238,23 @@ namespace WindowsFormsApp1
                         /*put not call*/
                         if (cbPos1Put.Checked == true && cbPos1Call.Checked != true)
                         {
+                            posCal.PricePerShare = double.Parse(tbPPS.Text);
+                            posCal.Premium = double.Parse(tbPos1Premium.Text);
+                            //put.AskPrice = double.Parse(txtAsk.Text) * 100;//put.BidPrice = double.Parse(txtBid.Text) * 100;
+                            posCal.NumberOfContracts = int.Parse(tbPos1ContractCount.Text);
+                            posCal.StrikePrice = double.Parse(tbPos1Strike.Text);
 
+                            posCal.SellPut();
+
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " per share - Sell " + posCal.NumberOfContracts.ToString() +
+                        " - " + posCal.StrikePrice.ToString() + " Put @ " + posCal.Premium.ToString("c") + " to open");
+                            lbOutPut.Items.Add("Immediate (ROI) Return of Investment: " + posCal.FrontedProfit.ToString("c"));
+                            lbOutPut.Items.Add("Price (BE) Break Even: " + posCal.BreakEven.ToString("c"));
+                            lbOutPut.Items.Add("Required Capital: " + posCal.UpfrontCost.ToString("c"));
+                            lbOutPut.Items.Add("Buy Back Price: " + posCal.MaxLoss.ToString("c"));
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add(" ");
                         }
 
                         /* CAN ADD ADDITION STATEMENT TO DENY THE SALE OF NAKED CALLS & TELL USER TO TRY A SPREAD INSTEAD */
@@ -243,12 +268,9 @@ namespace WindowsFormsApp1
             
         }
 
-        /* private void checkBoxSpread_CheckedChanged(object sender, EventArgs e)
-         {
-             if (checkBoxSpread.Checked == true)
-                 spreadCalculateToolStripMenuItem.Visible = true;
-             else if (checkBoxSpread.Checked == false)
-                 spreadCalculateToolStripMenuItem.Visible = false;
-         }*/
+        private void cbSpread_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbSpread.Checked == true) {gbPos2.Visible = true;}else{gbPos2.Visible = false;}
+        }
     }
 }

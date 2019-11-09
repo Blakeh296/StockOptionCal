@@ -69,7 +69,7 @@
             this.lblPos1ContractCount = new System.Windows.Forms.Label();
             this.lblPos1SetPrice = new System.Windows.Forms.Label();
             this.lblPos1Strike = new System.Windows.Forms.Label();
-            this.tbSymbol = new System.Windows.Forms.TextBox();
+            this.tbIndexSymbl = new System.Windows.Forms.TextBox();
             this.lblSymbol = new System.Windows.Forms.Label();
             this.lblPPS = new System.Windows.Forms.Label();
             this.tbPPS = new System.Windows.Forms.TextBox();
@@ -229,6 +229,7 @@
             this.cbSpread.TabIndex = 36;
             this.cbSpread.Text = "Spread";
             this.cbSpread.UseVisualStyleBackColor = true;
+            this.cbSpread.CheckedChanged += new System.EventHandler(this.cbSpread_CheckedChanged);
             // 
             // lbOutPut
             // 
@@ -479,13 +480,13 @@
             this.lblPos1Strike.TabIndex = 13;
             this.lblPos1Strike.Text = "Strike :";
             // 
-            // tbSymbol
+            // tbIndexSymbl
             // 
-            this.tbSymbol.Location = new System.Drawing.Point(141, 49);
-            this.tbSymbol.Margin = new System.Windows.Forms.Padding(4);
-            this.tbSymbol.Name = "tbSymbol";
-            this.tbSymbol.Size = new System.Drawing.Size(85, 24);
-            this.tbSymbol.TabIndex = 32;
+            this.tbIndexSymbl.Location = new System.Drawing.Point(141, 49);
+            this.tbIndexSymbl.Margin = new System.Windows.Forms.Padding(4);
+            this.tbIndexSymbl.Name = "tbIndexSymbl";
+            this.tbIndexSymbl.Size = new System.Drawing.Size(85, 24);
+            this.tbIndexSymbl.TabIndex = 32;
             // 
             // lblSymbol
             // 
@@ -540,7 +541,7 @@
             this.Controls.Add(this.lbOutPut);
             this.Controls.Add(this.gbPos2);
             this.Controls.Add(this.gbPos1);
-            this.Controls.Add(this.tbSymbol);
+            this.Controls.Add(this.tbIndexSymbl);
             this.Controls.Add(this.lblSymbol);
             this.Controls.Add(this.lblPPS);
             this.Controls.Add(this.tbPPS);
@@ -601,7 +602,7 @@
         private System.Windows.Forms.Label lblPos1ContractCount;
         private System.Windows.Forms.Label lblPos1SetPrice;
         private System.Windows.Forms.Label lblPos1Strike;
-        private System.Windows.Forms.TextBox tbSymbol;
+        private System.Windows.Forms.TextBox tbIndexSymbl;
         private System.Windows.Forms.Label lblSymbol;
         private System.Windows.Forms.Label lblPPS;
         private System.Windows.Forms.TextBox tbPPS;
