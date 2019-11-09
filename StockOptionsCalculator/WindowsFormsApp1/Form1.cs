@@ -30,9 +30,7 @@ namespace WindowsFormsApp1
             // feeper == fee per option contract
             /* feeper = contract * feeper;
              FIGURE OUT WHAT REVENUE GETS TAKEN WHEN A TRADE IS OPENED AND CLOSED */
-            // Standard TextBox Variables
             //THINK ABOUT DAYS TILL EXPIRATION, OR CHANGING THE LABEL TXT BASED ON THE POSITION
-            // Made a output location for commision
             // Commissions for equity and options trades are $6.95 with a $0.75 fee per options contract
             try
             {
@@ -53,11 +51,11 @@ namespace WindowsFormsApp1
 
                             posCal.BuyCall();
 
-                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
                             lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
                         " - " + posCal.StrikePrice.ToString() + " Call @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add("Upfront Cost & Max Loss: " + posCal.UpfrontCost.ToString("c"));
-                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
                             lbOutPut.Items.Add(" ");
 
                             if (posCal.ITM == false)
@@ -85,12 +83,12 @@ namespace WindowsFormsApp1
 
                             posCal.BuyPut();
 
-                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                             lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
                         " - " + posCal.StrikePrice.ToString() + " put @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add("Upfront Cost: " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add("Break Even: " + posCal.BreakEven.ToString("c"));
-                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                             lbOutPut.Items.Add(" ");
 
                             if (posCal.ITM == false)
@@ -121,14 +119,14 @@ namespace WindowsFormsApp1
 
                             posCal.SellPut();
 
-                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                             lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " per share - Sell " + posCal.NumberOfContracts.ToString() +
                         " - " + posCal.StrikePrice.ToString() + " Put @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add("Immediate (ROI) Return of Investment: " + posCal.FrontedProfit.ToString("c"));
                             lbOutPut.Items.Add("Price (BE) Break Even: " + posCal.BreakEven.ToString("c"));
                             lbOutPut.Items.Add("Required Capital: " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add("Buy Back Price: " + posCal.MaxLoss.ToString("c"));
-                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                             lbOutPut.Items.Add(" ");
                         }
 
