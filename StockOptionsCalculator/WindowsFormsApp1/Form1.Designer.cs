@@ -30,21 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsQuickCal = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTb_PPS = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTb_SetPrice = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTb_Strike = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripTb_Contracts = new System.Windows.Forms.ToolStripTextBox();
-            this.TSMenuItem_QuickCalculate = new System.Windows.Forms.ToolStripMenuItem();
             this.TsCalculate = new System.Windows.Forms.ToolStripMenuItem();
             this.trainingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sellPutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buyPutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buyCallToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnRefresh = new System.Windows.Forms.Button();
             this.cbSpread = new System.Windows.Forms.CheckBox();
             this.lbOutPut = new System.Windows.Forms.ListBox();
             this.gbPos2 = new System.Windows.Forms.GroupBox();
@@ -85,7 +75,6 @@
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem,
-            this.tsQuickCal,
             this.TsCalculate,
             this.trainingToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -102,80 +91,12 @@
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // tsQuickCal
-            // 
-            this.tsQuickCal.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox1,
-            this.toolStripComboBox2,
-            this.toolStripSeparator2,
-            this.toolStripTb_PPS,
-            this.toolStripTb_SetPrice,
-            this.toolStripTb_Strike,
-            this.toolStripTb_Contracts,
-            this.TSMenuItem_QuickCalculate});
-            this.tsQuickCal.Name = "tsQuickCal";
-            this.tsQuickCal.Size = new System.Drawing.Size(74, 21);
-            this.tsQuickCal.Text = "&Quick Cal";
-            // 
-            // toolStripComboBox1
-            // 
-            this.toolStripComboBox1.Items.AddRange(new object[] {
-            "Buy",
-            "Sell"});
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
-            this.toolStripComboBox1.Text = "Buy";
-            // 
-            // toolStripComboBox2
-            // 
-            this.toolStripComboBox2.Items.AddRange(new object[] {
-            "Call",
-            "Put"});
-            this.toolStripComboBox2.Name = "toolStripComboBox2";
-            this.toolStripComboBox2.Size = new System.Drawing.Size(121, 23);
-            this.toolStripComboBox2.Text = "Call";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(178, 6);
-            // 
-            // toolStripTb_PPS
-            // 
-            this.toolStripTb_PPS.Name = "toolStripTb_PPS";
-            this.toolStripTb_PPS.Size = new System.Drawing.Size(100, 23);
-            this.toolStripTb_PPS.Text = "PricePerShare";
-            // 
-            // toolStripTb_SetPrice
-            // 
-            this.toolStripTb_SetPrice.Name = "toolStripTb_SetPrice";
-            this.toolStripTb_SetPrice.Size = new System.Drawing.Size(100, 23);
-            this.toolStripTb_SetPrice.Text = "SetPrice";
-            // 
-            // toolStripTb_Strike
-            // 
-            this.toolStripTb_Strike.Name = "toolStripTb_Strike";
-            this.toolStripTb_Strike.Size = new System.Drawing.Size(100, 23);
-            this.toolStripTb_Strike.Text = "Strike";
-            // 
-            // toolStripTb_Contracts
-            // 
-            this.toolStripTb_Contracts.Name = "toolStripTb_Contracts";
-            this.toolStripTb_Contracts.Size = new System.Drawing.Size(100, 23);
-            this.toolStripTb_Contracts.Text = "Contracts";
-            // 
-            // TSMenuItem_QuickCalculate
-            // 
-            this.TSMenuItem_QuickCalculate.Name = "TSMenuItem_QuickCalculate";
-            this.TSMenuItem_QuickCalculate.Size = new System.Drawing.Size(181, 22);
-            this.TSMenuItem_QuickCalculate.Text = "Do Work";
-            this.TSMenuItem_QuickCalculate.Click += new System.EventHandler(this.TSMenuItem_QuickCalculate_Click);
-            // 
             // TsCalculate
             // 
             this.TsCalculate.Name = "TsCalculate";
             this.TsCalculate.Size = new System.Drawing.Size(72, 21);
             this.TsCalculate.Text = "&Calculate";
+            this.TsCalculate.Click += new System.EventHandler(this.TsCalculate_Click);
             // 
             // trainingToolStripMenuItem
             // 
@@ -208,17 +129,6 @@
             this.buyCallToolStripMenuItem.Text = "&Buy Call";
             this.buyCallToolStripMenuItem.Click += new System.EventHandler(this.buyCallToolStripMenuItem_Click);
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(494, 360);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(173, 39);
-            this.btnRefresh.TabIndex = 37;
-            this.btnRefresh.Text = "Calculate/Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // cbSpread
             // 
             this.cbSpread.AutoSize = true;
@@ -235,10 +145,10 @@
             // 
             this.lbOutPut.FormattingEnabled = true;
             this.lbOutPut.ItemHeight = 18;
-            this.lbOutPut.Location = new System.Drawing.Point(342, 13);
+            this.lbOutPut.Location = new System.Drawing.Point(342, 86);
             this.lbOutPut.Margin = new System.Windows.Forms.Padding(4);
             this.lbOutPut.Name = "lbOutPut";
-            this.lbOutPut.Size = new System.Drawing.Size(320, 274);
+            this.lbOutPut.Size = new System.Drawing.Size(320, 310);
             this.lbOutPut.TabIndex = 35;
             this.lbOutPut.SelectedIndexChanged += new System.EventHandler(this.lbOutPut_SelectedIndexChanged);
             // 
@@ -521,7 +431,7 @@
             this.lbHelp.BackColor = System.Drawing.Color.White;
             this.lbHelp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lbHelp.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lbHelp.Location = new System.Drawing.Point(342, 291);
+            this.lbHelp.Location = new System.Drawing.Point(342, 9);
             this.lbHelp.Name = "lbHelp";
             this.lbHelp.Size = new System.Drawing.Size(320, 65);
             this.lbHelp.TabIndex = 38;
@@ -536,7 +446,6 @@
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(680, 407);
             this.Controls.Add(this.lbHelp);
-            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.cbSpread);
             this.Controls.Add(this.lbOutPut);
             this.Controls.Add(this.gbPos2);
@@ -566,18 +475,8 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem tsQuickCal;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TsCalculate;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
-        private System.Windows.Forms.ToolStripTextBox toolStripTb_PPS;
-        private System.Windows.Forms.ToolStripTextBox toolStripTb_SetPrice;
-        private System.Windows.Forms.ToolStripTextBox toolStripTb_Strike;
-        private System.Windows.Forms.ToolStripTextBox toolStripTb_Contracts;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem TSMenuItem_QuickCalculate;
-        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.CheckBox cbSpread;
         private System.Windows.Forms.ListBox lbOutPut;
         private System.Windows.Forms.GroupBox gbPos2;

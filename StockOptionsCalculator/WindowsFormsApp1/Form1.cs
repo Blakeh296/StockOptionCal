@@ -20,21 +20,12 @@ namespace WindowsFormsApp1
         TrainingBuyCalls tbcForm = new TrainingBuyCalls();
 
         public Form1()
-        {
-            InitializeComponent();
-        }
+        { InitializeComponent(); }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            gbPos2.Visible = false;
-           /* cbOne.Text = "Buy";
-            cbTwo.Text = "Call";
+        { gbPos2.Visible = false; }
 
-            checkBoxSpread.Checked = false;
-            spreadCalculateToolStripMenuItem.Visible = false; */
-        }
-
-        private void TSMenuItem_QuickCalculate_Click(object sender, EventArgs e)
+        private void TsCalculate_Click(object sender, EventArgs e)
         {
             // feeper == fee per option contract
             /* feeper = contract * feeper;
@@ -43,122 +34,6 @@ namespace WindowsFormsApp1
             //THINK ABOUT DAYS TILL EXPIRATION, OR CHANGING THE LABEL TXT BASED ON THE POSITION
             // Made a output location for commision
             // Commissions for equity and options trades are $6.95 with a $0.75 fee per options contract
-
-            try
-            {
-
-                if (toolStripComboBox1.Text == "Buy" && toolStripComboBox2.Text == "Call")
-                {
-                    posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
-                    //put.AskPrice = double.Parse(txtAsk.Text) * 100; //put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    posCal.Premium = double.Parse(toolStripTb_SetPrice.Text);
-                    posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
-                    posCal.StrikePrice = double.Parse(toolStripTb_Strike.Text);
-
-                    posCal.BuyCall();
-
-                    lbOutPut.Items.Clear();
-                    lbOutPut.Items.Add(posCal.PricePerShare.ToString("c")+" per share - Buy " + posCal.NumberOfContracts.ToString()+
-                        " - " + posCal.StrikePrice.ToString()+" Call @ " + posCal.Premium.ToString("c") + " to open");
-                    lbOutPut.Items.Add("Upfront Cost & Max Loss: " + posCal.UpfrontCost.ToString("c"));
-
-                    if (posCal.ITM == false)
-                    {
-                        lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
-                        lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
-                        lbOutPut.Items.Add("Price Move: " + posCal.PriceMove.ToString("c"));
-                    }
-                    else
-                    {
-                        lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
-                        lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
-                        lbOutPut.Items.Add("Time Value : " + posCal.Time.ToString("c"));
-                        lbOutPut.Items.Add("Intrinsic Value: " + posCal.Intrinsic.ToString("c"));
-                        lbOutPut.Items.Add("Price Move: " + posCal.PriceMove.ToString("c"));
-                    }
-
-                }
-                else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Call")
-                {
-
-                }
-                else if (toolStripComboBox1.Text == "Buy" && toolStripComboBox2.Text == "Put")
-                {
-                    posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
-                    //put.AskPrice = double.Parse(txtAsk.Text) * 100; //put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    posCal.Premium = double.Parse(toolStripTb_SetPrice.Text);
-                    posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
-                    posCal.StrikePrice = double.Parse(toolStripTb_Strike.Text);
-
-                    posCal.BuyPut();
-
-                    lbOutPut.Items.Clear();
-                    lbOutPut.Items.Add("Upfront Cost: " + posCal.UpfrontCost.ToString("c"));
-                    lbOutPut.Items.Add("Break Even: " + posCal.BreakEven.ToString("c"));
-
-                    if (posCal.ITM == false)
-                    {
-                        lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
-                        lbOutPut.Items.Add("Price Move: " + posCal.PriceMove.ToString("c"));
-                    }
-                    else
-                    {
-                        lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
-                        lbOutPut.Items.Add("Intrinsic Value: " + posCal.Intrinsic.ToString("c"));
-                        lbOutPut.Items.Add("Time Value" + posCal.Time.ToString("c"));
-                    }
-                }
-                else if (toolStripComboBox1.Text == "Sell" && toolStripComboBox2.Text == "Put")
-                {
-                    posCal.PricePerShare = double.Parse(toolStripTb_PPS.Text);
-                    posCal.Premium = double.Parse(toolStripTb_SetPrice.Text);
-                    //put.AskPrice = double.Parse(txtAsk.Text) * 100;
-                    //put.BidPrice = double.Parse(txtBid.Text) * 100;
-                    posCal.NumberOfContracts = int.Parse(toolStripTb_Contracts.Text);
-                    posCal.StrikePrice = double.Parse(toolStripTb_Strike.Text);
-
-                    posCal.SellPut();
-
-                    lbOutPut.Items.Add("Immediate (ROI) Return of Investment: " +posCal.FrontedProfit.ToString("c"));
-                    lbOutPut.Items.Add("Price (BE) Break Even: "+posCal.BreakEven.ToString("c"));
-                    lbOutPut.Items.Add("Required Capital: "+ posCal.UpfrontCost.ToString("c"));
-                    lbOutPut.Items.Add("Buy Back Price: "+ posCal.MaxLoss.ToString("c"));
-                    //txtMaxLoss.Text = posCal.MaxLoss.ToString("c"); txtMaxLoss.BackColor = System.Drawing.Color.LightBlue;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void lbOutPut_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            lbHelp.Text = lbOutPut.Text.ToString();
-        }
-
-        private void lbHelp_DoubleClick(object sender, EventArgs e)
-        {
-            lbOutPut.Items.Clear(); lbHelp.Text = "*HINTSingle Click to read txt. DBL Click to clear results.";
-        }
-
-        private void sellPutToolStripMenuItem_Click(object sender, EventArgs e)
-        {   tspForm.ShowDialog();   }
-
-        private void buyPutToolStripMenuItem_Click(object sender, EventArgs e)
-        {   tbpForm.ShowDialog();   }
-
-        private void buyCallToolStripMenuItem_Click(object sender, EventArgs e)
-        {   tbcForm.ShowDialog();   }
-
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
             try
             {
                 if (cbSpread.Checked == true)
@@ -179,7 +54,7 @@ namespace WindowsFormsApp1
                             posCal.BuyCall();
 
                             lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - "+posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
+                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
                         " - " + posCal.StrikePrice.ToString() + " Call @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add("Upfront Cost & Max Loss: " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
@@ -211,7 +86,7 @@ namespace WindowsFormsApp1
                             posCal.BuyPut();
 
                             lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - "+posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
+                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
                         " - " + posCal.StrikePrice.ToString() + " put @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add("Upfront Cost: " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add("Break Even: " + posCal.BreakEven.ToString("c"));
@@ -261,16 +136,34 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        { Application.Exit(); }
+
+        private void lbOutPut_SelectedIndexChanged(object sender, EventArgs e)
+        { lbHelp.Text = lbOutPut.Text.ToString(); }
+
+        private void lbHelp_DoubleClick(object sender, EventArgs e)
+        { lbOutPut.Items.Clear(); lbHelp.Text = "*HINTSingle Click to read txt. DBL Click to clear results."; }
+
+        private void sellPutToolStripMenuItem_Click(object sender, EventArgs e)
+        {   tspForm.ShowDialog();   }
+
+        private void buyPutToolStripMenuItem_Click(object sender, EventArgs e)
+        {   tbpForm.ShowDialog();   }
+
+        private void buyCallToolStripMenuItem_Click(object sender, EventArgs e)
+        {   tbcForm.ShowDialog();   }
+
+
         private void cbSpread_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbSpread.Checked == true) {gbPos2.Visible = true;}else{gbPos2.Visible = false;}
-        }
+        { if (cbSpread.Checked == true) {gbPos2.Visible = true;} else {gbPos2.Visible = false;} }
+
+        
     }
 }
