@@ -11,12 +11,15 @@ namespace WindowsFormsApp1
 
     public class Option
     {
+
         private double _premium;
         private double _pps;
         //private double _ask;
        // private double _bid;
         private double _strike;
         private double _countofcontracts;
+
+
 
         public double PricePerShare
         { get { return _pps; } set { _pps = value; } }

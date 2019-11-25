@@ -10,14 +10,21 @@ namespace WindowsFormsApp1
 
     public class SpreadCal : PosCal
     {
-        PosCal posCal = new PosCal();
-
-        private double _setPrice2;
+        private bool _optn1bysll;
+        private bool _optn2bysll;
+        private double _premium2;
         private double _strike2;
         private double _countofContracts2;
 
-        public double SetPrice2
-        { get { return _setPrice2; } set { _setPrice2 = value; } }
+        public bool Option1BuySell
+        { get { return _optn1bysll; } set { _optn1bysll = value; } }
+
+        public bool Option2BuySell
+        { get { return _optn2bysll; } set { _optn2bysll = value; } }
+
+        public double Premium2
+        { get { return _premium2; } set { _premium2 = value; } }
+
 
         private double Strike2
         { get { return _strike2; } set { _strike2 = value; } }
@@ -28,9 +35,24 @@ namespace WindowsFormsApp1
         public SpreadCal()
         {        }
 
-       /* public void VerticalSpread()
+        public void VerticalCallSpread()
         {
-            posCal.FrontedProfit;
-        }*/
+            if (Option1BuySell == true)
+            {
+                double s100 = StrikePrice * 100;
+                double s200 = Strike2 * 100;
+                double eqPt1 = Premium - Premium2 + s100;
+                double bePt2 = s100 + UpfrontCost;
+
+                UpfrontCost = Premium + Premium2;
+                ProfitPotential = eqPt1 - s200;
+                BreakEven = bePt2 / 100;
+            }
+            else if (Option1BuySell == false)
+            {
+
+            }
+            
+        }
     }
 }
