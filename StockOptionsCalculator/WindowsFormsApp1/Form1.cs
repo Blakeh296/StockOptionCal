@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
     {
         Option option = new Option();
         PosCal posCal = new PosCal();
+        SpreadCal spreadCal = new SpreadCal();
 
         TrainingSellPuts tspForm = new TrainingSellPuts();
         TrainingBuyPuts tbpForm = new TrainingBuyPuts();
@@ -35,7 +36,57 @@ namespace WindowsFormsApp1
             try
             {
                 if (cbSpread.Checked == true)
-                { }
+                {
+                    if (cbPos1Buy.Checked == true && cbPos1Sell.Checked != true)
+                    { spreadCal.Option1BuySell = true; }
+                    else if (cbPos1Sell.Checked == true && cbPos1Buy.Checked != true)
+                    { spreadCal.Option1BuySell = false; }
+
+                    if (cbPos2Buy.Checked == true && cbPos2Sell.Checked != true)
+                    { spreadCal.Option2BuySell = true; }
+                    else if (cbPos2Sell.Checked == true && cbPos2Buy.Checked != true)
+                    { spreadCal.Option2BuySell = false; }
+
+                    bool optn1buysell = spreadCal.Option1BuySell;
+                    bool optn2buysell = spreadCal.Option2BuySell;
+
+                    /*Vert Call Spread*/
+                    if (cbPos1Buy.Checked == true && cbPos1Sell.Checked != true)
+                    {
+                        if (cbPos2Sell.Checked == true && cbPos2Buy.Checked != true)
+                        {
+                            if (cbPos1Call.Checked == true && cbPos1Put.Checked != true)
+                            {
+                                if (cbPos2Call.Checked == true && cbPos2Put.Checked != true)
+                                {
+                                    spreadCal.PricePerShare = double.Parse(tbPPS.Text);
+                                    spreadCal.Premium = double.Parse(tbPos1Premium.Text);
+                                    spreadCal.NumberOfContracts = int.Parse(tbPos1ContractCount.Text);
+                                    spreadCal.StrikePrice = double.Parse(tbPos1Strike.Text);
+                                    spreadCal.Premium2 = double.Parse(tbPos2SetPrice.Text);
+                                    spreadCal.Strike2 = double.Parse(tbPos2Strike.Text);
+                                    spreadCal.CountofContracts2 = int.Parse(tbPos2ContractCount.Text);
+
+                                    spreadCal.VerticalCallSpread();
+                                    double belblout = spreadCal.Strike100 + spreadCal.UpfrontCost; /*put this somewhere else*/
+
+                                    lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                                    lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + spreadCal.PricePerShare + " PPS (Price Per Share)");
+                                    lbOutPut.Items.Add("Buy " + spreadCal.NumberOfContracts + " - " + spreadCal.StrikePrice + " Call @ " + spreadCal.Premium + " to Open");
+                                    lbOutPut.Items.Add("Sell " + spreadCal.CountofContracts2 + " - " + spreadCal.Strike2 + " Call @ " + spreadCal.Premium2 + " to Open");
+                                    lbOutPut.Items.Add(" ");
+                                    lbOutPut.Items.Add("----- " + spreadCal.Prem100 + " - " + spreadCal.Prem200);
+                                    lbOutPut.Items.Add("Upfront cost: " + spreadCal.UpfrontCost);
+                                    lbOutPut.Items.Add("----- " + spreadCal.UpfrontCost + " + " + spreadCal.Strike100 + " = " + spreadCal.Strike200 + " - " + spreadCal.BE100);
+                                    lbOutPut.Items.Add("Potential profit: " + spreadCal.ProfitPotential);
+                                    lbOutPut.Items.Add("----- " + spreadCal.Strike100 + " + " + spreadCal.UpfrontCost + " = " + belblout + "/100");
+                                    lbOutPut.Items.Add("B/E (Break Even): " + spreadCal.BreakEven);
+                                }
+                            }
+                        }      
+                    }
+                    /*codehere*/
+                }
                 else if (cbSpread.Checked != true) /*Think about RADIO BUTTIONS instead of CHECK BOXES*/
                 {
                     /*IF BUY AND NOT SELL*/
@@ -52,11 +103,10 @@ namespace WindowsFormsApp1
                             posCal.BuyCall();
 
                             lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " per share - Buy " + posCal.NumberOfContracts.ToString() +
-                        " - " + posCal.StrikePrice.ToString() + " Call @ " + posCal.Premium.ToString("c") + " to open");
-                            lbOutPut.Items.Add("Upfront Cost & Max Loss: " + posCal.UpfrontCost.ToString("c"));
-                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
+                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " per share");
+                            lbOutPut.Items.Add( " Buy " + posCal.NumberOfContracts.ToString() +" - " + posCal.StrikePrice.ToString() + " Call @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add(" ");
+                            lbOutPut.Items.Add("Upfront Cost & Max Loss: " + posCal.UpfrontCost.ToString("c"));
 
                             if (posCal.ITM == false)
                             {
