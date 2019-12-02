@@ -110,17 +110,18 @@ namespace WindowsFormsApp1
 
                             if (posCal.ITM == false)
                             {
-                                lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
                                 lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
-                                lbOutPut.Items.Add("Price Move: " + posCal.PriceMove.ToString("c"));
+                                lbOutPut.Items.Add("Price Move till B/E: " + posCal.PriceMove.ToString("c"));
+                                lbOutPut.Items.Add("Potential Profit (on open):  " + posCal.ProfitPotential.ToString("c"));
                             }
                             else
                             {
-                                lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
                                 lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
                                 lbOutPut.Items.Add("Time Value : " + posCal.Time.ToString("c"));
                                 lbOutPut.Items.Add("Intrinsic Value: " + posCal.Intrinsic.ToString("c"));
-                                lbOutPut.Items.Add("Price Move: " + posCal.PriceMove.ToString("c"));
+                                lbOutPut.Items.Add("Price Move till B/E: " + posCal.PriceMove.ToString("c"));
+                                lbOutPut.Items.Add("Potential Profit (on open): " + posCal.ProfitPotential.ToString("c"));
+
                             }
                         }
                         /*IF PUT AND NOT CALL*/

@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
         {
             _upFrontCost = (Premium * 100) * NumberOfContracts;
             _breakEven = StrikePrice + Premium;
-            _profitPotential = (BreakEven * 100) * NumberOfContracts;
+            _profitPotential = (PricePerShare - StrikePrice) - Premium;
             _maxLoss = UpfrontCost;
             _priceMove = (BreakEven - PricePerShare);
 
