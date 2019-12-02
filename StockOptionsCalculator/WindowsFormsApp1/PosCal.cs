@@ -16,6 +16,8 @@ namespace WindowsFormsApp1
         private double _priceMove;
         private double _intrinsic;
         private double _time;
+        private double _roi;
+        private double _ro72;
         private bool _itm;
 
         public double BreakEven
@@ -41,6 +43,12 @@ namespace WindowsFormsApp1
 
         public double PriceMove
         { get { return _priceMove; } set { _priceMove = value; } }
+
+        public double ROI
+        { get { return _roi; } set { _roi = value; } }
+
+        public double RO72
+        { get { return _ro72; } set { _ro72 = value; } }
 
         public bool ITM
         { get { return _itm; } set { _itm = value; } }
@@ -86,11 +94,15 @@ namespace WindowsFormsApp1
 
         public void SellPut()
         {
-            //upfront cost is essentially risk
+            double eqRo72 = (Premium / StrikePrice) * 100;
+            //upfront cost is essentially risk prem/strike
             _frontedProfit = Premium * 100;
             _upFrontCost = (StrikePrice * 100) - FrontedProfit;
             _breakEven = UpfrontCost/100;
             _maxLoss = UpfrontCost;
+            _roi = FrontedProfit / BreakEven;
+            _ro72 = 72/eqRo72;
+             
         }
     }
 }

@@ -179,6 +179,8 @@ namespace WindowsFormsApp1
                             lbOutPut.Items.Add("Price (BE) Break Even: " + posCal.BreakEven.ToString("c"));
                             lbOutPut.Items.Add("Required Capital: " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add("Buy Back Price: " + posCal.MaxLoss.ToString("c"));
+                            lbOutPut.Items.Add("ROI(Return on Investment): " + posCal.ROI.ToString(".0000") + "%");
+                            lbOutPut.Items.Add("Rule of 72's: " + posCal.RO72.ToString(".00") + " years");
                         }
 
                         /* CAN ADD ADDITION STATEMENT TO DENY THE SALE OF NAKED CALLS & TELL USER TO TRY A SPREAD INSTEAD */
