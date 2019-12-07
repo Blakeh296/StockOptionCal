@@ -69,10 +69,10 @@ namespace WindowsFormsApp1
                 UpfrontCost = (Premium - Premium2) * 100;
 
                 double bePt2 = Strike100 + UpfrontCost;
-
-                ProfitPotential = Strike200 - eqPt1;
                 BreakEven = bePt2 / 100;
                 BE100 = BreakEven * 100;
+                ProfitPotential = Strike200 - BE100;
+                
             }
             else if (Option1BuySell == false)
             {

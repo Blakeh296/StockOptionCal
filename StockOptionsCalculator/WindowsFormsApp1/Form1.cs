@@ -71,16 +71,16 @@ namespace WindowsFormsApp1
                                     double belblout = spreadCal.Strike100 + spreadCal.UpfrontCost; /*put this somewhere else*/
 
                                     lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                                    lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + spreadCal.PricePerShare + " PPS (Price Per Share)");
+                                    lbOutPut.Items.Add("Index: " + tbIndexSymbl.Text + " - " + spreadCal.PricePerShare + " PPS");
                                     lbOutPut.Items.Add("Buy " + spreadCal.NumberOfContracts + " - " + spreadCal.StrikePrice + " Call @ " + spreadCal.Premium + " to Open");
                                     lbOutPut.Items.Add("Sell " + spreadCal.CountofContracts2 + " - " + spreadCal.Strike2 + " Call @ " + spreadCal.Premium2 + " to Open");
                                     lbOutPut.Items.Add(" ");
-                                    lbOutPut.Items.Add("----- " + spreadCal.Prem100 + " - " + spreadCal.Prem200);
                                     lbOutPut.Items.Add("Upfront cost: " + spreadCal.UpfrontCost);
-                                    lbOutPut.Items.Add("----- " + spreadCal.UpfrontCost + " + " + spreadCal.Strike100 + " = " + spreadCal.Strike200 + " - " + spreadCal.BE100);
+                                    lbOutPut.Items.Add("----- " + spreadCal.Prem100 + " - " + spreadCal.Prem200 + " = ");
                                     lbOutPut.Items.Add("Potential profit: " + spreadCal.ProfitPotential);
-                                    lbOutPut.Items.Add("----- " + spreadCal.Strike100 + " + " + spreadCal.UpfrontCost + " = " + belblout + "/100");
+                                    lbOutPut.Items.Add("----- " + spreadCal.Strike200 + " - " + spreadCal.BE100 + " = ");
                                     lbOutPut.Items.Add("B/E (Break Even): " + spreadCal.BreakEven);
+                                    lbOutPut.Items.Add("----- " + spreadCal.Strike100 + " + " + spreadCal.UpfrontCost + " = " + belblout + "/100" + " = ");
                                 }
                             }
                         }      
@@ -103,24 +103,23 @@ namespace WindowsFormsApp1
                             posCal.BuyCall();
 
                             lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ");
-                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " Price Per Share");
+                            lbOutPut.Items.Add("Index: " + tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " PPS ");
                             lbOutPut.Items.Add( " Buy " + posCal.NumberOfContracts.ToString() +" - " + posCal.StrikePrice.ToString() + " Call @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Upfront Cost & Max Loss: " + posCal.UpfrontCost.ToString("c"));
+                            lbOutPut.Items.Add("-----" + posCal.Premium + " x 100 =");
+                            lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
+                            lbOutPut.Items.Add("-----" + posCal.StrikePrice + " + " + posCal.Premium + " = ");
+                            lbOutPut.Items.Add("Price Move till B/E: " + posCal.PriceMove.ToString("c"));
+                            lbOutPut.Items.Add("----- 'B/E' " + posCal.BreakEven + " - 'PPS' " + posCal.PricePerShare + " = ");
+                            lbOutPut.Items.Add("Profit Prediction (on open):  " + posCal.ProfitPotential.ToString("c"));
+                            lbOutPut.Items.Add("----- (" + posCal.PricePerShare + " - " + posCal.StrikePrice + ") - " + posCal.Premium + " = ");
+                            lbOutPut.Items.Add("Potential Profit: Unlimited 'The sky's the Limit'");
 
-                            if (posCal.ITM == false)
+                            if (posCal.ITM == true)
                             {
-                                lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
-                                lbOutPut.Items.Add("Price Move till B/E: " + posCal.PriceMove.ToString("c"));
-                                lbOutPut.Items.Add("Potential Profit (on open):  " + posCal.ProfitPotential.ToString("c"));
-                            }
-                            else
-                            {
-                                lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
                                 lbOutPut.Items.Add("Time Value : " + posCal.Time.ToString("c"));
                                 lbOutPut.Items.Add("Intrinsic Value: " + posCal.Intrinsic.ToString("c"));
-                                lbOutPut.Items.Add("Price Move till B/E: " + posCal.PriceMove.ToString("c"));
-                                lbOutPut.Items.Add("Potential Profit (on open): " + posCal.ProfitPotential.ToString("c"));
 
                             }
                         }
@@ -135,9 +134,8 @@ namespace WindowsFormsApp1
                             posCal.BuyPut();
 
                             lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " Price Per Share ");
-                            lbOutPut.Items.Add(" Buy " + posCal.NumberOfContracts.ToString() +
-                        " - " + posCal.StrikePrice.ToString() + " put @ " + posCal.Premium.ToString("c") + " to open");
+                            lbOutPut.Items.Add("Index: " + tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " PPS ");
+                            lbOutPut.Items.Add(" Buy " + posCal.NumberOfContracts.ToString() + " - " + posCal.StrikePrice.ToString() + " put @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Upfront Cost: " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add("Break Even: " + posCal.BreakEven.ToString("c"));
@@ -172,9 +170,8 @@ namespace WindowsFormsApp1
                             posCal.SellPut();
 
                             lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-                            lbOutPut.Items.Add(tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " Price Per Share");
-                            lbOutPut.Items.Add(" Sell " + posCal.NumberOfContracts.ToString() +
-                        " - " + posCal.StrikePrice.ToString() + " Put @ " + posCal.Premium.ToString("c") + " to open");
+                            lbOutPut.Items.Add("Index: "+tbIndexSymbl.Text + " - " + posCal.PricePerShare.ToString("c") + " Per Share");
+                            lbOutPut.Items.Add(" Sell " + posCal.NumberOfContracts.ToString() + " - " + posCal.StrikePrice.ToString() + " Put @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Immediate (ROI) Return of Investment: " + posCal.FrontedProfit.ToString("c"));
                             lbOutPut.Items.Add("Price (BE) Break Even: " + posCal.BreakEven.ToString("c"));
@@ -184,7 +181,13 @@ namespace WindowsFormsApp1
                             lbOutPut.Items.Add("Rule of 72's: " + posCal.RO72.ToString(".00") + " years");
                         }
 
+                        if(cbPos1Call.Checked == true && cbPos1Put.Checked != true)
+                        {
+                            lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
+                            lbOutPut.Items.Add("The Sale of naked calls is not prohibited due to being extra risky, try create a spread instead ");
+                        }
                         /* CAN ADD ADDITION STATEMENT TO DENY THE SALE OF NAKED CALLS & TELL USER TO TRY A SPREAD INSTEAD */
+
                     }
                 }
             }
