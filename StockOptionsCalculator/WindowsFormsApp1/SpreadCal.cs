@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
                 double eqPt1 = Prem100 - Prem200 + Strike100;
 
                 UpfrontCost = (Premium - Premium2) * 100;
-
+                CapitalRequired = Strike200 - UpfrontCost;
                 double bePt2 = Strike100 + UpfrontCost;
                 BreakEven = bePt2 / 100;
                 BE100 = BreakEven * 100;

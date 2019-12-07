@@ -11,6 +11,7 @@ namespace WindowsFormsApp1
         private double _breakEven;
         private double _profitPotential;
         private double _maxLoss;
+        private double _capitalRequired;
         private double _frontedProfit;
         private double _upFrontCost;
         private double _priceMove;
@@ -25,6 +26,9 @@ namespace WindowsFormsApp1
 
         public double ProfitPotential
         { get { return _profitPotential; } set { _profitPotential = value; } }
+
+        public double CapitalRequired
+        { get { return _capitalRequired; } set { _capitalRequired = value; } }
 
         public double UpfrontCost
         { get { return _upFrontCost; } set { _upFrontCost = value; } }
