@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TsCalculate = new System.Windows.Forms.ToolStripMenuItem();
             this.tbPPSts = new System.Windows.Forms.ToolStripTextBox();
             this.pPSPricePerShareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,29 +65,23 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.menuStrip1.BackColor = System.Drawing.Color.LightGray;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem,
-            this.TsCalculate,
-            this.tbPPSts,
             this.pPSPricePerShareToolStripMenuItem,
+            this.tbPPSts,
+            this.indexSymbolToolStripMenuItem,
             this.tbIndexSymblTs,
-            this.indexSymbolToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.TsCalculate});
+            this.menuStrip1.Location = new System.Drawing.Point(-4, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(579, 29);
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuStrip1.Size = new System.Drawing.Size(549, 29);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(40, 23);
-            this.exitToolStripMenuItem.Text = "&Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // TsCalculate
             // 
@@ -106,8 +99,8 @@
             // pPSPricePerShareToolStripMenuItem
             // 
             this.pPSPricePerShareToolStripMenuItem.Name = "pPSPricePerShareToolStripMenuItem";
-            this.pPSPricePerShareToolStripMenuItem.Size = new System.Drawing.Size(149, 23);
-            this.pPSPricePerShareToolStripMenuItem.Text = ": PPS (Price per Share)";
+            this.pPSPricePerShareToolStripMenuItem.Size = new System.Drawing.Size(153, 23);
+            this.pPSPricePerShareToolStripMenuItem.Text = "PPS (Price per Share) : ";
             // 
             // tbIndexSymblTs
             // 
@@ -118,8 +111,8 @@
             // indexSymbolToolStripMenuItem
             // 
             this.indexSymbolToolStripMenuItem.Name = "indexSymbolToolStripMenuItem";
-            this.indexSymbolToolStripMenuItem.Size = new System.Drawing.Size(105, 23);
-            this.indexSymbolToolStripMenuItem.Text = ": Index Symbol";
+            this.indexSymbolToolStripMenuItem.Size = new System.Drawing.Size(109, 23);
+            this.indexSymbolToolStripMenuItem.Text = "Index Symbol : ";
             // 
             // cbSpread
             // 
@@ -141,10 +134,10 @@
             this.lbOutPut.FormattingEnabled = true;
             this.lbOutPut.HorizontalScrollbar = true;
             this.lbOutPut.ItemHeight = 18;
-            this.lbOutPut.Location = new System.Drawing.Point(11, 45);
+            this.lbOutPut.Location = new System.Drawing.Point(3, 33);
             this.lbOutPut.Margin = new System.Windows.Forms.Padding(4);
             this.lbOutPut.Name = "lbOutPut";
-            this.lbOutPut.Size = new System.Drawing.Size(236, 256);
+            this.lbOutPut.Size = new System.Drawing.Size(233, 274);
             this.lbOutPut.TabIndex = 35;
             this.lbOutPut.DoubleClick += new System.EventHandler(this.lbOutPut_DoubleClick);
             // 
@@ -161,7 +154,7 @@
             this.gbPos2.Controls.Add(this.tbPos2ContractCount);
             this.gbPos2.Controls.Add(this.tbPos2Strike);
             this.gbPos2.Controls.Add(this.tbPos2SetPrice);
-            this.gbPos2.Location = new System.Drawing.Point(255, 171);
+            this.gbPos2.Location = new System.Drawing.Point(225, 171);
             this.gbPos2.Margin = new System.Windows.Forms.Padding(4);
             this.gbPos2.Name = "gbPos2";
             this.gbPos2.Padding = new System.Windows.Forms.Padding(4);
@@ -289,7 +282,7 @@
             this.gbPos1.Controls.Add(this.lblPos1ContractCount);
             this.gbPos1.Controls.Add(this.lblPos1SetPrice);
             this.gbPos1.Controls.Add(this.lblPos1Strike);
-            this.gbPos1.Location = new System.Drawing.Point(254, 33);
+            this.gbPos1.Location = new System.Drawing.Point(224, 33);
             this.gbPos1.Margin = new System.Windows.Forms.Padding(4);
             this.gbPos1.Name = "gbPos1";
             this.gbPos1.Padding = new System.Windows.Forms.Padding(4);
@@ -408,7 +401,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(579, 311);
+            this.ClientSize = new System.Drawing.Size(549, 311);
             this.Controls.Add(this.lbOutPut);
             this.Controls.Add(this.gbPos2);
             this.Controls.Add(this.gbPos1);
@@ -432,7 +425,6 @@
 
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TsCalculate;
         private System.Windows.Forms.CheckBox cbSpread;
         private System.Windows.Forms.ListBox lbOutPut;

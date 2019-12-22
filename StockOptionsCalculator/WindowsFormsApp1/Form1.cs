@@ -112,16 +112,16 @@ namespace WindowsFormsApp1
                             lbOutPut.Items.Add( " Buy " + posCal.NumberOfContracts.ToString() +" - " + posCal.StrikePrice.ToString() + " Call @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Upfront Cost & Max Loss: " + posCal.UpfrontCost.ToString("c"));
-                            lbOutPut.Items.Add("-----" + posCal.Premium + " x 100 = " + posCal.UpfrontCost);
+                            lbOutPut.Items.Add("----- 'Premium' " + posCal.Premium.ToString("c") + " x '#ofContracts' " + posCal.NumberOfContracts + " x 100 = " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("B/E Price: " + posCal.BreakEven.ToString("c"));
-                            lbOutPut.Items.Add("-----" + posCal.StrikePrice + " + " + posCal.Premium + " = " + posCal.BreakEven);
+                            lbOutPut.Items.Add("----- 'Strike' " + posCal.StrikePrice.ToString("c") + " + 'Premium' " + posCal.Premium.ToString("c") + " = " + posCal.BreakEven.ToString("c"));
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Price Move till B/E: " + posCal.PriceMove.ToString("c"));
-                            lbOutPut.Items.Add("----- 'B/E' " + posCal.BreakEven + " - 'PPS' " + posCal.PricePerShare + " = " + posCal.PriceMove);
+                            lbOutPut.Items.Add("----- 'B/E' " + posCal.BreakEven.ToString("c") + " - 'PPS' " + posCal.PricePerShare.ToString("c") + " = " + posCal.PriceMove.ToString("c"));
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Profit Prediction (on open):  " + posCal.ProfitPotential.ToString("c"));
-                            lbOutPut.Items.Add("----- (" + posCal.PricePerShare + " - " + posCal.StrikePrice + ") - " + posCal.Premium + " = " + posCal.ProfitPotential);
+                            lbOutPut.Items.Add("----- ( 'PPS' " + posCal.PricePerShare.ToString("c") + " - 'Strike' " + posCal.StrikePrice.ToString("c") + ") - 'Premium' " + posCal.Premium.ToString("c") + " = " + posCal.ProfitPotential.ToString("c"));
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Potential Profit: Unlimited 'The sky's the Limit'");
 
@@ -207,8 +207,8 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        { Application.Exit(); }
+       /* private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        { Application.Exit(); } NO NEED FOR THIS ATM */
 
         /*private void sellPutToolStripMenuItem_Click(object sender, EventArgs e)
         {   tspForm.ShowDialog();   }
