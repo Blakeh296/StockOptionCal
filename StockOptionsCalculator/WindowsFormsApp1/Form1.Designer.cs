@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.TsCalculate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbPPSts = new System.Windows.Forms.ToolStripTextBox();
             this.pPSPricePerShareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbIndexSymblTs = new System.Windows.Forms.ToolStripTextBox();
+            this.tbPPSts = new System.Windows.Forms.ToolStripTextBox();
             this.indexSymbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbIndexSymblTs = new System.Windows.Forms.ToolStripTextBox();
+            this.TsCalculate = new System.Windows.Forms.ToolStripMenuItem();
             this.cbSpread = new System.Windows.Forms.CheckBox();
             this.lbOutPut = new System.Windows.Forms.ListBox();
             this.gbPos2 = new System.Windows.Forms.GroupBox();
@@ -70,18 +70,42 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pPSPricePerShareToolStripMenuItem,
+            this.TsCalculate,
             this.tbPPSts,
-            this.indexSymbolToolStripMenuItem,
+            this.pPSPricePerShareToolStripMenuItem,
             this.tbIndexSymblTs,
-            this.TsCalculate});
-            this.menuStrip1.Location = new System.Drawing.Point(-4, 0);
+            this.indexSymbolToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(-11, 1);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.menuStrip1.Size = new System.Drawing.Size(549, 29);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // pPSPricePerShareToolStripMenuItem
+            // 
+            this.pPSPricePerShareToolStripMenuItem.Name = "pPSPricePerShareToolStripMenuItem";
+            this.pPSPricePerShareToolStripMenuItem.Size = new System.Drawing.Size(153, 23);
+            this.pPSPricePerShareToolStripMenuItem.Text = ": PPS (Price per Share) ";
+            // 
+            // tbPPSts
+            // 
+            this.tbPPSts.Name = "tbPPSts";
+            this.tbPPSts.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbPPSts.Size = new System.Drawing.Size(100, 23);
+            // 
+            // indexSymbolToolStripMenuItem
+            // 
+            this.indexSymbolToolStripMenuItem.Name = "indexSymbolToolStripMenuItem";
+            this.indexSymbolToolStripMenuItem.Size = new System.Drawing.Size(109, 23);
+            this.indexSymbolToolStripMenuItem.Text = ": Index Symbol ";
+            // 
+            // tbIndexSymblTs
+            // 
+            this.tbIndexSymblTs.Name = "tbIndexSymblTs";
+            this.tbIndexSymblTs.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbIndexSymblTs.Size = new System.Drawing.Size(100, 23);
             // 
             // TsCalculate
             // 
@@ -90,36 +114,13 @@
             this.TsCalculate.Text = "&Calculate";
             this.TsCalculate.Click += new System.EventHandler(this.TsCalculate_Click);
             // 
-            // tbPPSts
-            // 
-            this.tbPPSts.Name = "tbPPSts";
-            this.tbPPSts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPPSts.Size = new System.Drawing.Size(100, 23);
-            // 
-            // pPSPricePerShareToolStripMenuItem
-            // 
-            this.pPSPricePerShareToolStripMenuItem.Name = "pPSPricePerShareToolStripMenuItem";
-            this.pPSPricePerShareToolStripMenuItem.Size = new System.Drawing.Size(153, 23);
-            this.pPSPricePerShareToolStripMenuItem.Text = "PPS (Price per Share) : ";
-            // 
-            // tbIndexSymblTs
-            // 
-            this.tbIndexSymblTs.Name = "tbIndexSymblTs";
-            this.tbIndexSymblTs.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbIndexSymblTs.Size = new System.Drawing.Size(100, 23);
-            // 
-            // indexSymbolToolStripMenuItem
-            // 
-            this.indexSymbolToolStripMenuItem.Name = "indexSymbolToolStripMenuItem";
-            this.indexSymbolToolStripMenuItem.Size = new System.Drawing.Size(109, 23);
-            this.indexSymbolToolStripMenuItem.Text = "Index Symbol : ";
-            // 
             // cbSpread
             // 
             this.cbSpread.AutoSize = true;
-            this.cbSpread.Location = new System.Drawing.Point(10, 0);
+            this.cbSpread.Location = new System.Drawing.Point(8, 1);
             this.cbSpread.Margin = new System.Windows.Forms.Padding(4);
             this.cbSpread.Name = "cbSpread";
+            this.cbSpread.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cbSpread.Size = new System.Drawing.Size(74, 22);
             this.cbSpread.TabIndex = 36;
             this.cbSpread.Text = "Spread";
@@ -137,13 +138,14 @@
             this.lbOutPut.Location = new System.Drawing.Point(3, 33);
             this.lbOutPut.Margin = new System.Windows.Forms.Padding(4);
             this.lbOutPut.Name = "lbOutPut";
-            this.lbOutPut.Size = new System.Drawing.Size(233, 274);
+            this.lbOutPut.Size = new System.Drawing.Size(237, 130);
             this.lbOutPut.TabIndex = 35;
             this.lbOutPut.DoubleClick += new System.EventHandler(this.lbOutPut_DoubleClick);
             // 
             // gbPos2
             // 
             this.gbPos2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbPos2.BackColor = System.Drawing.Color.Gainsboro;
             this.gbPos2.Controls.Add(this.cbPos2Call);
             this.gbPos2.Controls.Add(this.cbPos2Buy);
             this.gbPos2.Controls.Add(this.lblStrike);
@@ -154,12 +156,12 @@
             this.gbPos2.Controls.Add(this.tbPos2ContractCount);
             this.gbPos2.Controls.Add(this.tbPos2Strike);
             this.gbPos2.Controls.Add(this.tbPos2SetPrice);
-            this.gbPos2.Location = new System.Drawing.Point(225, 171);
+            this.gbPos2.Location = new System.Drawing.Point(248, 171);
             this.gbPos2.Margin = new System.Windows.Forms.Padding(4);
             this.gbPos2.Name = "gbPos2";
             this.gbPos2.Padding = new System.Windows.Forms.Padding(4);
             this.gbPos2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gbPos2.Size = new System.Drawing.Size(320, 130);
+            this.gbPos2.Size = new System.Drawing.Size(300, 130);
             this.gbPos2.TabIndex = 34;
             this.gbPos2.TabStop = false;
             this.gbPos2.Text = "Position2";
@@ -247,8 +249,10 @@
             this.tbPos2ContractCount.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2ContractCount.Name = "tbPos2ContractCount";
             this.tbPos2ContractCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos2ContractCount.Size = new System.Drawing.Size(85, 24);
+            this.tbPos2ContractCount.Size = new System.Drawing.Size(68, 24);
             this.tbPos2ContractCount.TabIndex = 18;
+            this.tbPos2ContractCount.Text = "1";
+            this.tbPos2ContractCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbPos2Strike
             // 
@@ -256,8 +260,9 @@
             this.tbPos2Strike.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2Strike.Name = "tbPos2Strike";
             this.tbPos2Strike.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos2Strike.Size = new System.Drawing.Size(85, 24);
+            this.tbPos2Strike.Size = new System.Drawing.Size(68, 24);
             this.tbPos2Strike.TabIndex = 20;
+            this.tbPos2Strike.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbPos2SetPrice
             // 
@@ -265,12 +270,14 @@
             this.tbPos2SetPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2SetPrice.Name = "tbPos2SetPrice";
             this.tbPos2SetPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos2SetPrice.Size = new System.Drawing.Size(85, 24);
+            this.tbPos2SetPrice.Size = new System.Drawing.Size(68, 24);
             this.tbPos2SetPrice.TabIndex = 19;
+            this.tbPos2SetPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // gbPos1
             // 
             this.gbPos1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbPos1.BackColor = System.Drawing.Color.Gainsboro;
             this.gbPos1.Controls.Add(this.cbPos1Call);
             this.gbPos1.Controls.Add(this.cbSpread);
             this.gbPos1.Controls.Add(this.cbPos1Buy);
@@ -282,12 +289,12 @@
             this.gbPos1.Controls.Add(this.lblPos1ContractCount);
             this.gbPos1.Controls.Add(this.lblPos1SetPrice);
             this.gbPos1.Controls.Add(this.lblPos1Strike);
-            this.gbPos1.Location = new System.Drawing.Point(224, 33);
+            this.gbPos1.Location = new System.Drawing.Point(248, 33);
             this.gbPos1.Margin = new System.Windows.Forms.Padding(4);
             this.gbPos1.Name = "gbPos1";
             this.gbPos1.Padding = new System.Windows.Forms.Padding(4);
             this.gbPos1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gbPos1.Size = new System.Drawing.Size(321, 130);
+            this.gbPos1.Size = new System.Drawing.Size(301, 130);
             this.gbPos1.TabIndex = 33;
             this.gbPos1.TabStop = false;
             this.gbPos1.Text = "Position 1";
@@ -342,8 +349,10 @@
             this.tbPos1ContractCount.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1ContractCount.Name = "tbPos1ContractCount";
             this.tbPos1ContractCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos1ContractCount.Size = new System.Drawing.Size(85, 24);
+            this.tbPos1ContractCount.Size = new System.Drawing.Size(68, 24);
             this.tbPos1ContractCount.TabIndex = 8;
+            this.tbPos1ContractCount.Text = "1";
+            this.tbPos1ContractCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbPos1Premium
             // 
@@ -351,8 +360,9 @@
             this.tbPos1Premium.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1Premium.Name = "tbPos1Premium";
             this.tbPos1Premium.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos1Premium.Size = new System.Drawing.Size(85, 24);
+            this.tbPos1Premium.Size = new System.Drawing.Size(68, 24);
             this.tbPos1Premium.TabIndex = 9;
+            this.tbPos1Premium.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbPos1Strike
             // 
@@ -360,8 +370,9 @@
             this.tbPos1Strike.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1Strike.Name = "tbPos1Strike";
             this.tbPos1Strike.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos1Strike.Size = new System.Drawing.Size(85, 24);
+            this.tbPos1Strike.Size = new System.Drawing.Size(68, 24);
             this.tbPos1Strike.TabIndex = 10;
+            this.tbPos1Strike.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblPos1ContractCount
             // 
@@ -401,7 +412,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(549, 311);
+            this.ClientSize = new System.Drawing.Size(553, 171);
             this.Controls.Add(this.lbOutPut);
             this.Controls.Add(this.gbPos2);
             this.Controls.Add(this.gbPos1);

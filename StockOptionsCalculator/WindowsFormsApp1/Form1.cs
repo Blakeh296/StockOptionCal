@@ -120,16 +120,19 @@ namespace WindowsFormsApp1
                             lbOutPut.Items.Add("Price Move till B/E: " + posCal.PriceMove.ToString("c"));
                             lbOutPut.Items.Add("----- 'B/E' " + posCal.BreakEven.ToString("c") + " - 'PPS' " + posCal.PricePerShare.ToString("c") + " = " + posCal.PriceMove.ToString("c"));
                             lbOutPut.Items.Add(" ");
-                            lbOutPut.Items.Add("Profit Prediction (on open):  " + posCal.ProfitPotential.ToString("c"));
-                            lbOutPut.Items.Add("----- ( 'PPS' " + posCal.PricePerShare.ToString("c") + " - 'Strike' " + posCal.StrikePrice.ToString("c") + ") - 'Premium' " + posCal.Premium.ToString("c") + " = " + posCal.ProfitPotential.ToString("c"));
+                            lbOutPut.Items.Add("Profit Prediction (on Close):  " + posCal.ProfitPotential.ToString("c"));
+                            lbOutPut.Items.Add("----- (( 'PPS' " + posCal.PricePerShare.ToString("c") + " - 'Strike' " + posCal.StrikePrice.ToString("c") + ") - 'Premium' " + posCal.Premium.ToString("c") + ") * 100 = " + posCal.ProfitPotential.ToString("c"));
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Potential Profit: Unlimited 'The sky's the Limit'");
+                            lbOutPut.Items.Add(" ");
 
                             if (posCal.ITM == true)
                             {
-                                lbOutPut.Items.Add("Time Value : " + posCal.Time.ToString("c"));
                                 lbOutPut.Items.Add("Intrinsic Value: " + posCal.Intrinsic.ToString("c"));
-
+                                lbOutPut.Items.Add("----- 'PPS' " + posCal.PricePerShare.ToString("c") + " - 'Strike' " + posCal.StrikePrice.ToString("c") + " = " + posCal.Intrinsic.ToString("c"));
+                                lbOutPut.Items.Add(" ");
+                                lbOutPut.Items.Add("Time Value : " + posCal.Time.ToString("c"));
+                                lbOutPut.Items.Add("----- 'UpfrontCost' " + posCal.UpfrontCost.ToString("c") + " - 'Intrinsic' " + posCal.Intrinsic.ToString("c") + " = " + posCal.Time.ToString("c"));
                             }
                         }
                         /*IF PUT AND NOT CALL*/
@@ -144,24 +147,28 @@ namespace WindowsFormsApp1
 
                             lbOutPut.Items.Add("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
                             lbOutPut.Items.Add("Index: " + tbIndexSymblTs.Text + " - " + posCal.PricePerShare.ToString("c") + " PPS ");
-                            lbOutPut.Items.Add("Buy " + posCal.NumberOfContracts.ToString() + " - " + posCal.StrikePrice.ToString() + " put @ " + posCal.Premium.ToString("c") + " to open");
+                            lbOutPut.Items.Add("Buy " + posCal.NumberOfContracts.ToString() + " - " + posCal.StrikePrice.ToString("c") + " put @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Upfront Cost: " + posCal.UpfrontCost.ToString("c"));
-                            lbOutPut.Items.Add("----- " + posCal.Premium + " x 100 = " + posCal.UpfrontCost);
+                            lbOutPut.Items.Add("----- 'Premium' " + posCal.Premium.ToString("c") + " x 100 = " + posCal.UpfrontCost.ToString("c"));
                             lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("B/E 'Break Even': " + posCal.BreakEven.ToString("c"));
-                            lbOutPut.Items.Add("----- " + posCal.PricePerShare.ToString("c") + " + " + posCal.UpfrontCost.ToString("c") + " = " + posCal.BreakEven);
+                            lbOutPut.Items.Add("----- 'Strike' " + posCal.StrikePrice.ToString("c") + " - 'Premium' " + posCal.Premium.ToString("c") + " = " + posCal.BreakEven);
                             lbOutPut.Items.Add(" ");
-                            lbOutPut.Items.Add("MAX Potential Profit: " + posCal.ProfitPotential.ToString("c"));
-                            lbOutPut.Items.Add("----- -1 x ( " + posCal.PricePerShare.ToString("c") + " - " + posCal.BreakEven.ToString("c") + " ) = " + posCal.ProfitPotential);
+                            lbOutPut.Items.Add("Potential Profit (On Close): " + posCal.ProfitPotential.ToString("c"));
+                            lbOutPut.Items.Add("----- (( 'Strike' " + posCal.StrikePrice.ToString("c") + " - 'PPS' " + posCal.PricePerShare.ToString("c") + " ) - " + posCal.Premium.ToString("c") + ") * 100 = " + posCal.ProfitPotential.ToString("c"));
                             /*FIX THIS ^*/
                             lbOutPut.Items.Add("");
-                            lbOutPut.Items.Add("Price Move until B/E: " + " -" + posCal.PriceMove.ToString("c"));
-
+                            lbOutPut.Items.Add("Price Move until B/E: " + posCal.PriceMove.ToString("c"));
+                            lbOutPut.Items.Add("----- -1 x ( 'PPS' " + posCal.PricePerShare.ToString("c") + " - 'B/E' " + posCal.BreakEven.ToString("c") +") = " + posCal.PriceMove.ToString("c"));
                             if (posCal.ITM == true)
                             {
+                                lbOutPut.Items.Add("");
                                 lbOutPut.Items.Add("Intrinsic Value: " + posCal.Intrinsic.ToString("c"));
+                                lbOutPut.Items.Add("----- 'Strike' " + posCal.StrikePrice.ToString("c") + " - 'PPS' " + posCal.PricePerShare.ToString("c") + " = " + posCal.Intrinsic.ToString("c"));
+                                lbOutPut.Items.Add("");
                                 lbOutPut.Items.Add("Time Value" + posCal.Time.ToString("c"));
+                                lbOutPut.Items.Add("----- 'UpfrontCost' " + posCal.UpfrontCost.ToString("c") + " - 'intrinsic' " + posCal.Intrinsic.ToString("c") + " = " + posCal.Time.ToString("c"));
                             }
                         }
                     }
@@ -221,9 +228,10 @@ namespace WindowsFormsApp1
 
 
         private void cbSpread_CheckedChanged(object sender, EventArgs e)
-        { if (cbSpread.Checked == true) {gbPos2.Visible = true;} else {gbPos2.Visible = false;} }
+        { if (cbSpread.Checked == true) {gbPos2.Visible = true; this.Height = 356; this.Width = 716; } else {gbPos2.Visible = false; this.Height = 215; this.Width = 569;} }
 
         private void lbOutPut_DoubleClick(object sender, EventArgs e)
         { lbOutPut.Items.Clear(); lbOutPut.Items.Add("***DBL CLICK To Clear Work***"); }
+
     }
 }
