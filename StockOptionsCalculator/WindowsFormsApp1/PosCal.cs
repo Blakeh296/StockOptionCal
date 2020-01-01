@@ -98,14 +98,14 @@ namespace WindowsFormsApp1
 
         public void SellPut()
         {
-            double eqRo72 = (Premium / StrikePrice) * 100;
+            double eqRo72P1 = Premium / StrikePrice;
+            double eqRo72P2 = eqRo72P1 * 100;
             //upfront cost is essentially risk prem/strike
-            _frontedProfit = Premium * 100;
-            _upFrontCost = (StrikePrice * 100) - FrontedProfit;
-            _breakEven = UpfrontCost/100;
-            _maxLoss = UpfrontCost;
-            _roi = FrontedProfit / BreakEven;
-            _ro72 = 72/eqRo72;
+            _frontedProfit = (Premium * 100) * NumberOfContracts;
+            _upFrontCost = ((StrikePrice * 100) - FrontedProfit) * NumberOfContracts;
+            _breakEven = StrikePrice - Premium;
+            _roi = (FrontedProfit / UpfrontCost) * 100;
+            _ro72 = 72/eqRo72P2;
              
         }
     }

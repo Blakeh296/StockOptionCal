@@ -190,12 +190,20 @@ namespace WindowsFormsApp1
                             lbOutPut.Items.Add("Index: "+tbIndexSymblTs.Text + " - " + posCal.PricePerShare.ToString("c") + " Per Share");
                             lbOutPut.Items.Add(" Sell " + posCal.NumberOfContracts.ToString() + " - " + posCal.StrikePrice.ToString() + " Put @ " + posCal.Premium.ToString("c") + " to open");
                             lbOutPut.Items.Add(" ");
-                            lbOutPut.Items.Add("Immediate (ROI) Return of Investment: " + posCal.FrontedProfit.ToString("c"));
+                            lbOutPut.Items.Add("Immediate (ROI) Return on Investment: " + posCal.FrontedProfit.ToString("c"));
+                            lbOutPut.Items.Add("----- ('Premium' " + posCal.Premium.ToString("c") + " x 100) x '#ofContracts' " + posCal.NumberOfContracts + " = " + posCal.FrontedProfit.ToString());
+                            lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Price (BE) Break Even: " + posCal.BreakEven.ToString("c"));
+                            lbOutPut.Items.Add("----- 'Strike' " + posCal.StrikePrice.ToString("c") + " - 'Premium' " + posCal.Premium + " = " + posCal.BreakEven.ToString());
+                            lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Required Capital: " + posCal.UpfrontCost.ToString("c"));
-                            lbOutPut.Items.Add("Buy Back Price: " + posCal.MaxLoss.ToString("c"));
-                            lbOutPut.Items.Add("ROI(Return on Investment): " + posCal.ROI.ToString(".0000") + "%");
+                            lbOutPut.Items.Add("----- (('Strike'" + posCal.StrikePrice.ToString("c") + " x 100) - 'immROI'" + posCal.FrontedProfit.ToString("c") + ") x '#ofContracts' " + posCal.NumberOfContracts.ToString() + " = " + posCal.UpfrontCost.ToString());
+                            lbOutPut.Items.Add(" ");
+                            lbOutPut.Items.Add("% ROI: " + posCal.ROI.ToString(".00") + "%");
+                            lbOutPut.Items.Add("----- ('ImmROI' " + posCal.FrontedProfit.ToString("c") + " / " + posCal.UpfrontCost.ToString("c") + ") x 100 = " + posCal.ROI.ToString());
+                            lbOutPut.Items.Add(" ");
                             lbOutPut.Items.Add("Rule of 72's: " + posCal.RO72.ToString(".00") + " years");
+                            lbOutPut.Items.Add("----- 72 / ('Premium' " + posCal.Premium.ToString("c") + " / 'Strike' " + posCal.StrikePrice.ToString("c") + " ) x 100 = " + posCal.RO72.ToString(".00"));
                         }
 
                         if(cbPos1Call.Checked == true && cbPos1Put.Checked != true)
