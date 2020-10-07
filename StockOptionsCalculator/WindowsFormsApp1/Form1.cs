@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         { InitializeComponent(); }
 
         private void Form1_Load(object sender, EventArgs e)
-        { gbPos2.Visible = false; lbOutPut.Items.Add("***DBL Click To Clear Work***"); }
+        { gbPos2.Visible = false; gbIV.Visible = false; lbOutPut.Items.Add("***DBL Click To Clear Work***"); }
 
         private void TsCalculate_Click(object sender, EventArgs e)
         {
@@ -35,6 +35,16 @@ namespace WindowsFormsApp1
             // Commissions for equity and options trades are $6.95 with a $0.75 fee per options contract
             try
             {
+                if (cbIV.Checked == true)
+                {
+
+                    posCal.PricePerShare = double.Parse(tbPPSts.Text);
+                    posCal.IV = double.Parse(tbIV.Text);
+                    posCal.BusinessDays = double.Parse(tbIVdays.Text);
+                    posCal.IVCal();
+                    lbOutPut.Items.Add("IV Daily for "+tbIndexSymblTs.Text+ " : " + Math.Round(posCal.IvDailyResult, 2) + "IV Custom :" + Math.Round(posCal.IvCustomResult,2));
+                }
+
                 if (cbSpread.Checked == true)
                 {
                     if (cbPos1Buy.Checked == true && cbPos1Sell.Checked != true)
@@ -238,8 +248,11 @@ namespace WindowsFormsApp1
         private void cbSpread_CheckedChanged(object sender, EventArgs e)
         { if (cbSpread.Checked == true) {gbPos2.Visible = true; this.Height = 356; this.Width = 716; } else {gbPos2.Visible = false; this.Height = 215; this.Width = 569;} }
 
+        private void cbIV_CheckedChanged(object sender, EventArgs e)
+        { if (cbIV.Checked == true) { gbPos1.Visible = false; gbIV.Visible = true; } else { gbIV.Visible = false; gbPos1.Visible = true; } }
+        
+
         private void lbOutPut_DoubleClick(object sender, EventArgs e)
         { lbOutPut.Items.Clear(); lbOutPut.Items.Add("***DBL CLICK To Clear Work***"); }
-
     }
 }

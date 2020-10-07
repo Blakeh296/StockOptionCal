@@ -58,3 +58,13 @@ C:\Users\MTCStudent\Desktop\StockOptionCal\StockOptionsCalculator\WindowsFormsAp
 C:\Users\MTCStudent\Desktop\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Users\MTCStudent\Desktop\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\MTCStudent\Desktop\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojAssemblyReference.cache
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\blake\OneDrive\Desktop\CodeFiles\StockOptionCal\StockOptionsCalculator\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

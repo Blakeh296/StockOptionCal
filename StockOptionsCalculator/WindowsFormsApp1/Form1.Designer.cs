@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.pPSPricePerShareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbPPSts = new System.Windows.Forms.ToolStripTextBox();
-            this.indexSymbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbIndexSymblTs = new System.Windows.Forms.ToolStripTextBox();
             this.TsCalculate = new System.Windows.Forms.ToolStripMenuItem();
+            this.iVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbPPSts = new System.Windows.Forms.ToolStripTextBox();
+            this.pPSPricePerShareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tbIndexSymblTs = new System.Windows.Forms.ToolStripTextBox();
+            this.indexSymbolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cbSpread = new System.Windows.Forms.CheckBox();
             this.lbOutPut = new System.Windows.Forms.ListBox();
             this.gbPos2 = new System.Windows.Forms.GroupBox();
@@ -58,9 +59,16 @@
             this.lblPos1ContractCount = new System.Windows.Forms.Label();
             this.lblPos1SetPrice = new System.Windows.Forms.Label();
             this.lblPos1Strike = new System.Windows.Forms.Label();
+            this.gbIV = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbIVdays = new System.Windows.Forms.TextBox();
+            this.tbIV = new System.Windows.Forms.TextBox();
+            this.cbIV = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.gbPos2.SuspendLayout();
             this.gbPos1.SuspendLayout();
+            this.gbIV.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -69,59 +77,68 @@
             this.menuStrip1.BackColor = System.Drawing.Color.LightGray;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TsCalculate,
             this.tbPPSts,
             this.pPSPricePerShareToolStripMenuItem,
             this.tbIndexSymblTs,
             this.indexSymbolToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(-11, 1);
+            this.menuStrip1.Location = new System.Drawing.Point(-259, 1);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(549, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(797, 33);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // pPSPricePerShareToolStripMenuItem
+            // TsCalculate
             // 
-            this.pPSPricePerShareToolStripMenuItem.Name = "pPSPricePerShareToolStripMenuItem";
-            this.pPSPricePerShareToolStripMenuItem.Size = new System.Drawing.Size(153, 23);
-            this.pPSPricePerShareToolStripMenuItem.Text = ": PPS (Price per Share) ";
+            this.TsCalculate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iVToolStripMenuItem});
+            this.TsCalculate.Name = "TsCalculate";
+            this.TsCalculate.Size = new System.Drawing.Size(94, 27);
+            this.TsCalculate.Text = "&Calculate";
+            this.TsCalculate.Click += new System.EventHandler(this.TsCalculate_Click);
+            // 
+            // iVToolStripMenuItem
+            // 
+            this.iVToolStripMenuItem.Name = "iVToolStripMenuItem";
+            this.iVToolStripMenuItem.Size = new System.Drawing.Size(110, 28);
+            this.iVToolStripMenuItem.Text = "IV";
             // 
             // tbPPSts
             // 
             this.tbPPSts.Name = "tbPPSts";
             this.tbPPSts.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPPSts.Size = new System.Drawing.Size(100, 23);
+            this.tbPPSts.Size = new System.Drawing.Size(100, 27);
             // 
-            // indexSymbolToolStripMenuItem
+            // pPSPricePerShareToolStripMenuItem
             // 
-            this.indexSymbolToolStripMenuItem.Name = "indexSymbolToolStripMenuItem";
-            this.indexSymbolToolStripMenuItem.Size = new System.Drawing.Size(109, 23);
-            this.indexSymbolToolStripMenuItem.Text = ": Index Symbol ";
+            this.pPSPricePerShareToolStripMenuItem.Name = "pPSPricePerShareToolStripMenuItem";
+            this.pPSPricePerShareToolStripMenuItem.Size = new System.Drawing.Size(197, 27);
+            this.pPSPricePerShareToolStripMenuItem.Text = ": PPS (Price per Share) ";
             // 
             // tbIndexSymblTs
             // 
             this.tbIndexSymblTs.Name = "tbIndexSymblTs";
             this.tbIndexSymblTs.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbIndexSymblTs.Size = new System.Drawing.Size(100, 23);
+            this.tbIndexSymblTs.Size = new System.Drawing.Size(100, 27);
             // 
-            // TsCalculate
+            // indexSymbolToolStripMenuItem
             // 
-            this.TsCalculate.Name = "TsCalculate";
-            this.TsCalculate.Size = new System.Drawing.Size(72, 23);
-            this.TsCalculate.Text = "&Calculate";
-            this.TsCalculate.Click += new System.EventHandler(this.TsCalculate_Click);
+            this.indexSymbolToolStripMenuItem.Name = "indexSymbolToolStripMenuItem";
+            this.indexSymbolToolStripMenuItem.Size = new System.Drawing.Size(141, 27);
+            this.indexSymbolToolStripMenuItem.Text = ": Index Symbol ";
             // 
             // cbSpread
             // 
             this.cbSpread.AutoSize = true;
-            this.cbSpread.Location = new System.Drawing.Point(8, 1);
+            this.cbSpread.Location = new System.Drawing.Point(8, 0);
             this.cbSpread.Margin = new System.Windows.Forms.Padding(4);
             this.cbSpread.Name = "cbSpread";
             this.cbSpread.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cbSpread.Size = new System.Drawing.Size(74, 22);
+            this.cbSpread.Size = new System.Drawing.Size(93, 28);
             this.cbSpread.TabIndex = 36;
             this.cbSpread.Text = "Spread";
             this.cbSpread.UseVisualStyleBackColor = true;
@@ -134,11 +151,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbOutPut.FormattingEnabled = true;
             this.lbOutPut.HorizontalScrollbar = true;
-            this.lbOutPut.ItemHeight = 18;
+            this.lbOutPut.ItemHeight = 24;
             this.lbOutPut.Location = new System.Drawing.Point(3, 33);
             this.lbOutPut.Margin = new System.Windows.Forms.Padding(4);
             this.lbOutPut.Name = "lbOutPut";
-            this.lbOutPut.Size = new System.Drawing.Size(237, 130);
+            this.lbOutPut.Size = new System.Drawing.Size(237, 124);
             this.lbOutPut.TabIndex = 35;
             this.lbOutPut.DoubleClick += new System.EventHandler(this.lbOutPut_DoubleClick);
             // 
@@ -156,7 +173,7 @@
             this.gbPos2.Controls.Add(this.tbPos2ContractCount);
             this.gbPos2.Controls.Add(this.tbPos2Strike);
             this.gbPos2.Controls.Add(this.tbPos2SetPrice);
-            this.gbPos2.Location = new System.Drawing.Point(248, 171);
+            this.gbPos2.Location = new System.Drawing.Point(247, 176);
             this.gbPos2.Margin = new System.Windows.Forms.Padding(4);
             this.gbPos2.Name = "gbPos2";
             this.gbPos2.Padding = new System.Windows.Forms.Padding(4);
@@ -172,7 +189,7 @@
             this.cbPos2Call.Location = new System.Drawing.Point(19, 63);
             this.cbPos2Call.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos2Call.Name = "cbPos2Call";
-            this.cbPos2Call.Size = new System.Drawing.Size(52, 22);
+            this.cbPos2Call.Size = new System.Drawing.Size(63, 28);
             this.cbPos2Call.TabIndex = 16;
             this.cbPos2Call.Text = "Call";
             this.cbPos2Call.UseVisualStyleBackColor = true;
@@ -183,7 +200,7 @@
             this.cbPos2Buy.Location = new System.Drawing.Point(19, 33);
             this.cbPos2Buy.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos2Buy.Name = "cbPos2Buy";
-            this.cbPos2Buy.Size = new System.Drawing.Size(52, 22);
+            this.cbPos2Buy.Size = new System.Drawing.Size(64, 28);
             this.cbPos2Buy.TabIndex = 14;
             this.cbPos2Buy.Text = "Buy";
             this.cbPos2Buy.UseVisualStyleBackColor = true;
@@ -195,7 +212,7 @@
             this.lblStrike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStrike.Name = "lblStrike";
             this.lblStrike.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblStrike.Size = new System.Drawing.Size(54, 18);
+            this.lblStrike.Size = new System.Drawing.Size(66, 24);
             this.lblStrike.TabIndex = 23;
             this.lblStrike.Text = "Strike :";
             // 
@@ -205,7 +222,7 @@
             this.cbPos2Sell.Location = new System.Drawing.Point(79, 33);
             this.cbPos2Sell.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos2Sell.Name = "cbPos2Sell";
-            this.cbPos2Sell.Size = new System.Drawing.Size(51, 22);
+            this.cbPos2Sell.Size = new System.Drawing.Size(63, 28);
             this.cbPos2Sell.TabIndex = 15;
             this.cbPos2Sell.Text = "Sell";
             this.cbPos2Sell.UseVisualStyleBackColor = true;
@@ -217,7 +234,7 @@
             this.lblPos2SetPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos2SetPrice.Name = "lblPos2SetPrice";
             this.lblPos2SetPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPos2SetPrice.Size = new System.Drawing.Size(76, 18);
+            this.lblPos2SetPrice.Size = new System.Drawing.Size(95, 24);
             this.lblPos2SetPrice.TabIndex = 22;
             this.lblPos2SetPrice.Text = "Set Price :";
             // 
@@ -227,7 +244,7 @@
             this.cbPos2Put.Location = new System.Drawing.Point(81, 63);
             this.cbPos2Put.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos2Put.Name = "cbPos2Put";
-            this.cbPos2Put.Size = new System.Drawing.Size(49, 22);
+            this.cbPos2Put.Size = new System.Drawing.Size(59, 28);
             this.cbPos2Put.TabIndex = 17;
             this.cbPos2Put.Text = "Put";
             this.cbPos2Put.UseVisualStyleBackColor = true;
@@ -239,7 +256,7 @@
             this.lblPos2ContractCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos2ContractCount.Name = "lblPos2ContractCount";
             this.lblPos2ContractCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPos2ContractCount.Size = new System.Drawing.Size(185, 18);
+            this.lblPos2ContractCount.Size = new System.Drawing.Size(229, 24);
             this.lblPos2ContractCount.TabIndex = 21;
             this.lblPos2ContractCount.Text = "# of Contracts Purchased :";
             // 
@@ -249,7 +266,7 @@
             this.tbPos2ContractCount.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2ContractCount.Name = "tbPos2ContractCount";
             this.tbPos2ContractCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos2ContractCount.Size = new System.Drawing.Size(68, 24);
+            this.tbPos2ContractCount.Size = new System.Drawing.Size(68, 29);
             this.tbPos2ContractCount.TabIndex = 18;
             this.tbPos2ContractCount.Text = "1";
             this.tbPos2ContractCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -260,7 +277,7 @@
             this.tbPos2Strike.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2Strike.Name = "tbPos2Strike";
             this.tbPos2Strike.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos2Strike.Size = new System.Drawing.Size(68, 24);
+            this.tbPos2Strike.Size = new System.Drawing.Size(68, 29);
             this.tbPos2Strike.TabIndex = 20;
             this.tbPos2Strike.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -270,7 +287,7 @@
             this.tbPos2SetPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos2SetPrice.Name = "tbPos2SetPrice";
             this.tbPos2SetPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos2SetPrice.Size = new System.Drawing.Size(68, 24);
+            this.tbPos2SetPrice.Size = new System.Drawing.Size(68, 29);
             this.tbPos2SetPrice.TabIndex = 19;
             this.tbPos2SetPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -289,7 +306,7 @@
             this.gbPos1.Controls.Add(this.lblPos1ContractCount);
             this.gbPos1.Controls.Add(this.lblPos1SetPrice);
             this.gbPos1.Controls.Add(this.lblPos1Strike);
-            this.gbPos1.Location = new System.Drawing.Point(248, 33);
+            this.gbPos1.Location = new System.Drawing.Point(247, 38);
             this.gbPos1.Margin = new System.Windows.Forms.Padding(4);
             this.gbPos1.Name = "gbPos1";
             this.gbPos1.Padding = new System.Windows.Forms.Padding(4);
@@ -305,7 +322,7 @@
             this.cbPos1Call.Location = new System.Drawing.Point(17, 61);
             this.cbPos1Call.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos1Call.Name = "cbPos1Call";
-            this.cbPos1Call.Size = new System.Drawing.Size(52, 22);
+            this.cbPos1Call.Size = new System.Drawing.Size(63, 28);
             this.cbPos1Call.TabIndex = 6;
             this.cbPos1Call.Text = "Call";
             this.cbPos1Call.UseVisualStyleBackColor = true;
@@ -316,7 +333,7 @@
             this.cbPos1Buy.Location = new System.Drawing.Point(17, 31);
             this.cbPos1Buy.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos1Buy.Name = "cbPos1Buy";
-            this.cbPos1Buy.Size = new System.Drawing.Size(52, 22);
+            this.cbPos1Buy.Size = new System.Drawing.Size(64, 28);
             this.cbPos1Buy.TabIndex = 4;
             this.cbPos1Buy.Text = "Buy";
             this.cbPos1Buy.UseVisualStyleBackColor = true;
@@ -327,7 +344,7 @@
             this.cbPos1Sell.Location = new System.Drawing.Point(77, 30);
             this.cbPos1Sell.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos1Sell.Name = "cbPos1Sell";
-            this.cbPos1Sell.Size = new System.Drawing.Size(51, 22);
+            this.cbPos1Sell.Size = new System.Drawing.Size(63, 28);
             this.cbPos1Sell.TabIndex = 5;
             this.cbPos1Sell.Text = "Sell";
             this.cbPos1Sell.UseVisualStyleBackColor = true;
@@ -338,7 +355,7 @@
             this.cbPos1Put.Location = new System.Drawing.Point(77, 61);
             this.cbPos1Put.Margin = new System.Windows.Forms.Padding(4);
             this.cbPos1Put.Name = "cbPos1Put";
-            this.cbPos1Put.Size = new System.Drawing.Size(49, 22);
+            this.cbPos1Put.Size = new System.Drawing.Size(59, 28);
             this.cbPos1Put.TabIndex = 7;
             this.cbPos1Put.Text = "Put";
             this.cbPos1Put.UseVisualStyleBackColor = true;
@@ -349,7 +366,7 @@
             this.tbPos1ContractCount.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1ContractCount.Name = "tbPos1ContractCount";
             this.tbPos1ContractCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos1ContractCount.Size = new System.Drawing.Size(68, 24);
+            this.tbPos1ContractCount.Size = new System.Drawing.Size(68, 29);
             this.tbPos1ContractCount.TabIndex = 8;
             this.tbPos1ContractCount.Text = "1";
             this.tbPos1ContractCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -360,7 +377,7 @@
             this.tbPos1Premium.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1Premium.Name = "tbPos1Premium";
             this.tbPos1Premium.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos1Premium.Size = new System.Drawing.Size(68, 24);
+            this.tbPos1Premium.Size = new System.Drawing.Size(68, 29);
             this.tbPos1Premium.TabIndex = 9;
             this.tbPos1Premium.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -370,7 +387,7 @@
             this.tbPos1Strike.Margin = new System.Windows.Forms.Padding(4);
             this.tbPos1Strike.Name = "tbPos1Strike";
             this.tbPos1Strike.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tbPos1Strike.Size = new System.Drawing.Size(68, 24);
+            this.tbPos1Strike.Size = new System.Drawing.Size(68, 29);
             this.tbPos1Strike.TabIndex = 10;
             this.tbPos1Strike.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -381,7 +398,7 @@
             this.lblPos1ContractCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos1ContractCount.Name = "lblPos1ContractCount";
             this.lblPos1ContractCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPos1ContractCount.Size = new System.Drawing.Size(185, 18);
+            this.lblPos1ContractCount.Size = new System.Drawing.Size(229, 24);
             this.lblPos1ContractCount.TabIndex = 11;
             this.lblPos1ContractCount.Text = "# of Contracts Purchased :";
             // 
@@ -392,7 +409,7 @@
             this.lblPos1SetPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos1SetPrice.Name = "lblPos1SetPrice";
             this.lblPos1SetPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPos1SetPrice.Size = new System.Drawing.Size(76, 18);
+            this.lblPos1SetPrice.Size = new System.Drawing.Size(95, 24);
             this.lblPos1SetPrice.TabIndex = 12;
             this.lblPos1SetPrice.Text = "Set Price :";
             // 
@@ -403,17 +420,93 @@
             this.lblPos1Strike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPos1Strike.Name = "lblPos1Strike";
             this.lblPos1Strike.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblPos1Strike.Size = new System.Drawing.Size(54, 18);
+            this.lblPos1Strike.Size = new System.Drawing.Size(66, 24);
             this.lblPos1Strike.TabIndex = 13;
             this.lblPos1Strike.Text = "Strike :";
             // 
+            // gbIV
+            // 
+            this.gbIV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbIV.BackColor = System.Drawing.Color.Gainsboro;
+            this.gbIV.Controls.Add(this.label1);
+            this.gbIV.Controls.Add(this.label2);
+            this.gbIV.Controls.Add(this.tbIVdays);
+            this.gbIV.Controls.Add(this.tbIV);
+            this.gbIV.Location = new System.Drawing.Point(247, 33);
+            this.gbIV.Margin = new System.Windows.Forms.Padding(4);
+            this.gbIV.Name = "gbIV";
+            this.gbIV.Padding = new System.Windows.Forms.Padding(4);
+            this.gbIV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.gbIV.Size = new System.Drawing.Size(300, 99);
+            this.gbIV.TabIndex = 36;
+            this.gbIV.TabStop = false;
+            this.gbIV.Text = "Implied Volatility";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "# Business Days :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(177, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label2.Size = new System.Drawing.Size(37, 24);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "IV :";
+            // 
+            // tbIVdays
+            // 
+            this.tbIVdays.Location = new System.Drawing.Point(222, 57);
+            this.tbIVdays.Margin = new System.Windows.Forms.Padding(4);
+            this.tbIVdays.Name = "tbIVdays";
+            this.tbIVdays.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbIVdays.Size = new System.Drawing.Size(68, 29);
+            this.tbIVdays.TabIndex = 20;
+            this.tbIVdays.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbIV
+            // 
+            this.tbIV.Location = new System.Drawing.Point(222, 25);
+            this.tbIV.Margin = new System.Windows.Forms.Padding(4);
+            this.tbIV.Name = "tbIV";
+            this.tbIV.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.tbIV.Size = new System.Drawing.Size(68, 29);
+            this.tbIV.TabIndex = 19;
+            this.tbIV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cbIV
+            // 
+            this.cbIV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbIV.AutoSize = true;
+            this.cbIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIV.Location = new System.Drawing.Point(3, 157);
+            this.cbIV.Margin = new System.Windows.Forms.Padding(4);
+            this.cbIV.Name = "cbIV";
+            this.cbIV.Size = new System.Drawing.Size(133, 22);
+            this.cbIV.TabIndex = 17;
+            this.cbIV.Text = "Implied Volatility";
+            this.cbIV.UseVisualStyleBackColor = true;
+            this.cbIV.CheckedChanged += new System.EventHandler(this.cbIV_CheckedChanged);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(553, 171);
+            this.ClientSize = new System.Drawing.Size(553, 176);
+            this.Controls.Add(this.gbIV);
             this.Controls.Add(this.lbOutPut);
+            this.Controls.Add(this.cbIV);
             this.Controls.Add(this.gbPos2);
             this.Controls.Add(this.gbPos1);
             this.Controls.Add(this.menuStrip1);
@@ -429,6 +522,8 @@
             this.gbPos2.PerformLayout();
             this.gbPos1.ResumeLayout(false);
             this.gbPos1.PerformLayout();
+            this.gbIV.ResumeLayout(false);
+            this.gbIV.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,6 +560,13 @@
         private System.Windows.Forms.ToolStripTextBox tbPPSts;
         private System.Windows.Forms.ToolStripMenuItem indexSymbolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pPSPricePerShareToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem iVToolStripMenuItem;
+        private System.Windows.Forms.GroupBox gbIV;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbIVdays;
+        private System.Windows.Forms.TextBox tbIV;
+        private System.Windows.Forms.CheckBox cbIV;
     }
 }
 

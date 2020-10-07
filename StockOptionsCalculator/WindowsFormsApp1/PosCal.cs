@@ -21,6 +21,16 @@ namespace WindowsFormsApp1
         private double _ro72;
         private bool _itm;
 
+        //IV CAL VAR
+        private double _iv;
+        private double _buisDays;
+        private double _ivDailyCal;
+        private double _ivCustomCal;
+        private double _PPSlowDaily;
+        private double _PPShighDaily;
+        private double _PPShighCustom;
+        private double _PPSlowCustom;
+
         public double BreakEven
         { get { return _breakEven; } set { _breakEven = value; } }
 
@@ -56,6 +66,31 @@ namespace WindowsFormsApp1
 
         public bool ITM
         { get { return _itm; } set { _itm = value; } }
+
+        //IV CAL//IV CAL//IV CAL//IV CAL//IV CAL//IV CAL//IV CAL//IV CAL//IV CAL
+        public double IV
+        { get { return _iv; } set { _iv = value; } }
+
+        public double BusinessDays
+        { get { return _buisDays; } set { _buisDays = value; } }
+
+        public double IvDailyResult
+        { get { return _ivDailyCal; } set { _ivDailyCal = value; } }
+
+        public double IvCustomResult
+        { get { return _ivCustomCal; } set { _ivCustomCal = value; } }
+
+        public double PPSlowDaily
+        { get { return _PPSlowDaily; } set { _PPSlowDaily = value; } }
+
+        public double PPShighDaily
+        { get { return _PPShighDaily; } set { _PPShighDaily = value; } }
+
+        public double PPSlowCustom
+        { get { return _PPSlowCustom; } set { _PPSlowCustom = value; } }
+
+        public double PPShighCustom
+        { get { return _PPShighCustom; } set { _PPShighCustom = value; } }
 
         public PosCal()
         { }
@@ -107,6 +142,13 @@ namespace WindowsFormsApp1
             _roi = (FrontedProfit / UpfrontCost) * 100;
             _ro72 = 72/eqRo72P2;
              
+        }
+
+        public void IVCal()
+        {
+            _ivDailyCal = (_iv / 16) * 100;
+            _ivCustomCal = ((_iv / 16) * Math.Sqrt(_buisDays)) * 100;
+
         }
     }
 }
