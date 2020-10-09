@@ -84,11 +84,11 @@
             this.pPSPricePerShareToolStripMenuItem,
             this.tbIndexSymblTs,
             this.indexSymbolToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(-259, 1);
+            this.menuStrip1.Location = new System.Drawing.Point(-109, 1);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(797, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(647, 33);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -151,11 +151,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbOutPut.FormattingEnabled = true;
             this.lbOutPut.HorizontalScrollbar = true;
+            this.lbOutPut.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.lbOutPut.ItemHeight = 24;
             this.lbOutPut.Location = new System.Drawing.Point(3, 33);
             this.lbOutPut.Margin = new System.Windows.Forms.Padding(4);
             this.lbOutPut.Name = "lbOutPut";
-            this.lbOutPut.Size = new System.Drawing.Size(237, 124);
+            this.lbOutPut.Size = new System.Drawing.Size(237, 196);
             this.lbOutPut.TabIndex = 35;
             this.lbOutPut.DoubleClick += new System.EventHandler(this.lbOutPut_DoubleClick);
             // 
@@ -426,18 +427,18 @@
             // 
             // gbIV
             // 
-            this.gbIV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbIV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.gbIV.BackColor = System.Drawing.Color.Gainsboro;
             this.gbIV.Controls.Add(this.label1);
             this.gbIV.Controls.Add(this.label2);
             this.gbIV.Controls.Add(this.tbIVdays);
             this.gbIV.Controls.Add(this.tbIV);
-            this.gbIV.Location = new System.Drawing.Point(247, 33);
+            this.gbIV.Location = new System.Drawing.Point(240, 230);
             this.gbIV.Margin = new System.Windows.Forms.Padding(4);
             this.gbIV.Name = "gbIV";
             this.gbIV.Padding = new System.Windows.Forms.Padding(4);
             this.gbIV.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.gbIV.Size = new System.Drawing.Size(300, 99);
+            this.gbIV.Size = new System.Drawing.Size(300, 67);
             this.gbIV.TabIndex = 36;
             this.gbIV.TabStop = false;
             this.gbIV.Text = "Implied Volatility";
@@ -445,18 +446,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 62);
+            this.label1.Location = new System.Drawing.Point(121, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(157, 24);
+            this.label1.Size = new System.Drawing.Size(96, 24);
             this.label1.TabIndex = 23;
-            this.label1.Text = "# Business Days :";
+            this.label1.Text = "# of Days :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(177, 28);
+            this.label2.Location = new System.Drawing.Point(6, 28);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -466,7 +467,7 @@
             // 
             // tbIVdays
             // 
-            this.tbIVdays.Location = new System.Drawing.Point(222, 57);
+            this.tbIVdays.Location = new System.Drawing.Point(224, 28);
             this.tbIVdays.Margin = new System.Windows.Forms.Padding(4);
             this.tbIVdays.Name = "tbIVdays";
             this.tbIVdays.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -476,7 +477,7 @@
             // 
             // tbIV
             // 
-            this.tbIV.Location = new System.Drawing.Point(222, 25);
+            this.tbIV.Location = new System.Drawing.Point(45, 25);
             this.tbIV.Margin = new System.Windows.Forms.Padding(4);
             this.tbIV.Name = "tbIV";
             this.tbIV.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -489,7 +490,7 @@
             this.cbIV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.cbIV.AutoSize = true;
             this.cbIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIV.Location = new System.Drawing.Point(3, 157);
+            this.cbIV.Location = new System.Drawing.Point(3, 310);
             this.cbIV.Margin = new System.Windows.Forms.Padding(4);
             this.cbIV.Name = "cbIV";
             this.cbIV.Size = new System.Drawing.Size(133, 22);
@@ -503,7 +504,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(553, 176);
+            this.ClientSize = new System.Drawing.Size(553, 329);
             this.Controls.Add(this.gbIV);
             this.Controls.Add(this.lbOutPut);
             this.Controls.Add(this.cbIV);

@@ -42,7 +42,10 @@ namespace WindowsFormsApp1
                     posCal.IV = double.Parse(tbIV.Text);
                     posCal.BusinessDays = double.Parse(tbIVdays.Text);
                     posCal.IVCal();
-                    lbOutPut.Items.Add("IV Daily for "+tbIndexSymblTs.Text+ " : " + Math.Round(posCal.IvDailyResult, 2) + "IV Custom :" + Math.Round(posCal.IvCustomResult,2));
+                    lbOutPut.Items.Add("IV Daily for "+tbIndexSymblTs.Text+ " : " + Math.Round(posCal.IvDailyResult, 2) * 100 + "% Custom IV :" + Math.Round(posCal.IvCustomResult,2) * 100 + "%");
+                    lbOutPut.Items.Add(tbIndexSymblTs.Text + "Daily PPS Change +- : $" + Math.Round(posCal.PriceChangeDaily,2) + " Custom " + posCal.BusinessDays + " Day PPS range +- : $" + Math.Round(posCal.PriceChangeCustom,2));
+                    lbOutPut.Items.Add("Price Range Daily for "+tbIndexSymblTs.Text+" : $" +Math.Round(posCal.PPSlowDaily,2)+" - $" +Math.Round(posCal.PPShighDaily,2));
+                    lbOutPut.Items.Add("Price Range for " + posCal.BusinessDays + " Days : $" + Math.Round(posCal.PPSlowCustom,2) + " - $" + Math.Round(posCal.PPShighCustom,2)); ;
                 }
 
                 if (cbSpread.Checked == true)
@@ -232,8 +235,8 @@ namespace WindowsFormsApp1
             }
         }
 
-       /* private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        { Application.Exit(); } NO NEED FOR THIS ATM */
+        /* private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+         { Application.Exit(); } NO NEED FOR THIS ATM */
 
         /*private void sellPutToolStripMenuItem_Click(object sender, EventArgs e)
         {   tspForm.ShowDialog();   }
@@ -244,12 +247,13 @@ namespace WindowsFormsApp1
         private void buyCallToolStripMenuItem_Click(object sender, EventArgs e)
         {   tbcForm.ShowDialog();   }*/
 
+        //237, 196 / 537, 196
 
         private void cbSpread_CheckedChanged(object sender, EventArgs e)
         { if (cbSpread.Checked == true) {gbPos2.Visible = true; this.Height = 356; this.Width = 716; } else {gbPos2.Visible = false; this.Height = 215; this.Width = 569;} }
 
         private void cbIV_CheckedChanged(object sender, EventArgs e)
-        { if (cbIV.Checked == true) { gbPos1.Visible = false; gbIV.Visible = true; } else { gbIV.Visible = false; gbPos1.Visible = true; } }
+        { if (cbIV.Checked == true) { gbPos1.Visible = false; gbIV.Visible = true; lbOutPut.Size = new Size(537, 196); } else { gbIV.Visible = false; gbPos1.Visible = true; lbOutPut.Size = new Size(237, 196); } }
         
 
         private void lbOutPut_DoubleClick(object sender, EventArgs e)

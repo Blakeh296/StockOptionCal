@@ -30,6 +30,8 @@ namespace WindowsFormsApp1
         private double _PPShighDaily;
         private double _PPShighCustom;
         private double _PPSlowCustom;
+        private double _priceChangeDaily;
+        private double _priceChangeCustom;
 
         public double BreakEven
         { get { return _breakEven; } set { _breakEven = value; } }
@@ -92,6 +94,12 @@ namespace WindowsFormsApp1
         public double PPShighCustom
         { get { return _PPShighCustom; } set { _PPShighCustom = value; } }
 
+        public double PriceChangeDaily
+        { get { return _priceChangeDaily; } set { _priceChangeDaily = value; } }
+
+        public double PriceChangeCustom
+        { get { return _priceChangeCustom; } set { _priceChangeCustom = value; } }
+
         public PosCal()
         { }
 
@@ -146,9 +154,20 @@ namespace WindowsFormsApp1
 
         public void IVCal()
         {
-            _ivDailyCal = (_iv / 16) * 100;
-            _ivCustomCal = ((_iv / 16) * Math.Sqrt(_buisDays)) * 100;
-
+            //Calculate Daily IV
+            _ivDailyCal = (_iv / 16);
+            //Calculate Custom amount of days
+            _ivCustomCal = ((_iv / 16) * Math.Sqrt(_buisDays));
+            //Calculate how much price with change daily + or -
+            _priceChangeDaily = (PricePerShare * _ivDailyCal);
+            //Calculate how much price will change in custom range + or -
+            _priceChangeCustom = (PricePerShare * _ivCustomCal);
+            //Set the price range for the daily
+            _PPSlowDaily = PricePerShare - _priceChangeDaily;
+            _PPShighDaily = PricePerShare + _priceChangeDaily;
+            //Set the price range for custom range
+            _PPSlowCustom = PricePerShare - _priceChangeCustom;
+            _PPShighCustom = PricePerShare + _priceChangeCustom;
         }
     }
 }
