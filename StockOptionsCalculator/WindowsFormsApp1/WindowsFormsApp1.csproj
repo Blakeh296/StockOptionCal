@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataConn.cs" />
     <Compile Include="TrainingBuyCalls.cs">
       <SubType>Form</SubType>
     </Compile>

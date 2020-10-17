@@ -1,0 +1,87 @@
+--UOELKEB
+
+
+/*
+						********** WARNING, DO NOT RUN ENTIRE SCRIPT AT RISK OF LOSING DATA *************
+						********** WARNING, DO NOT RUN ENTIRE SCRIPT AT RISK OF LOSING DATA *************
+						********** WARNING, DO NOT RUN ENTIRE SCRIPT AT RISK OF LOSING DATA *************
+*/
+
+USE [master]
+GO
+		PRINT ''
+		PRINT 'Database'
+		PRINT ''
+
+IF EXISTS (SELECT * FROM Sys.databases WHERE Name = 'VolCalDb') DROP DATABASE VolCalDb
+
+	PRINT 'VolCalDb DROPPED'
+
+CREATE DATABASE VolCalDb
+GO
+
+	PRINT 'VolCalDb CREATED'
+	PRINT ''
+	PRINT 'Tables'
+	PRINT ''
+
+USE VolCalDb
+GO
+
+CREATE TABLE IdxTbl(idxID INT IDENTITY NOT NULL,
+					symbl VARCHAR(15) NOT NULL,
+					pps MONEY NOT NULL,
+					iv DECIMAL NOT NULL,
+					calDate DATETIME NULL,
+					comments VARCHAR(255) NULL,
+					PRIMARY KEY (idxID))
+
+CREATE TABLE DailyVolCal(
+					dVolCalID int Identity NOT NULL,
+					symbl VARCHAR(15) NOT NULL,
+					dailyIV DECIMAL NOT NULL,
+					dPPSMove MONEY NOT NULL,
+					dPPSLow MONEY NOT NULL,
+					dPPSHigh MONEY NOT NULL,
+					PRIMARY KEY (dVolCalID))
+
+
+
+CREATE TABLE CustomVolCal(
+						cVolCalID INT IDENTITY NOT NULL,
+						symbl VARCHAR(15) NOT NULL,
+						customIV DECIMAL NOT NULL,
+						cPPSMove MONEY NOT NULL,
+						cPPSLow MONEY NOT NULL,
+						cPPSHigh MONEY NOT NULL,
+						daysCal INT NULL,
+						PRIMARY KEY (cVolCalID)) GO
+
+CREATE INDEX idx_cVolCalID ON CustomVolCal (cVolCalID)
+GO
+
+CREATE INDEX idx_dVolCalID ON DailyVolCal (dVolCalID)
+GO
+
+CREATE INDEX idx_idxID ON IdxTbl (idxID)
+GO
+
+ALTER TABLE DailyVolCal ADD CONSTRAINT FK_dSymbl FOREIGN KEY (symbl)
+REFERENCES IdxTbl (symbl)
+GO
+
+ALTER TABLE CustomVolCal ADD CONSTRAINT FK_cSymbl FOREIGN KEY (symbl)
+REFERENCES IdxTbl (symbl)
+GO
+
+--PROC NEEDS FIXED DB LOOKS GOOD , BREAK THE 1 PROC INTO 3 ?
+CREATE PROC dVolCalInsert
+(@Symbl VARCHAR(15), @Iv DECIMAL, @DailyIV DECIMAL, @CustomIV DECIMAL, @DPPSMove MONEY,  @DPPSLow MONEY, @DPPSHigh MONEY, @CPPSMove MONEY,
+@CPPSLow MONEY, @CPPSHigh MONEY, @DaysCal INT, @CalDate DATETIME)
+AS
+	BEGIN
+		INSERT INTO DailyVolCal
+		VALUES (@Symbl, @Iv, @DailyIV, @CustomIV, @DPPSMove,  @DPPSLow, @DPPSHigh, @CPPSMove,@CPPSLow, @CPPSHigh, @DaysCal, @CalDate)
+		RETURN
+	END
+	GO
