@@ -28,60 +28,65 @@ GO
 USE VolCalDb
 GO
 
-CREATE TABLE IdxTbl(idxID INT IDENTITY NOT NULL,
+CREATE TABLE CompInfo(symblID INT IDENTITY(1,1),
+					symbl VARCHAR(15) NOT NULL,
+					companyName VARCHAR(155) NOT NULL,
+					PRIMARY KEY (symblID))
+
+CREATE TABLE DailyVolCal(
+					dVolCalID int Identity(1,1),
+					dsymblID INT NULL,
 					symbl VARCHAR(15) NOT NULL,
 					pps MONEY NOT NULL,
 					iv DECIMAL NOT NULL,
-					calDate DATETIME NULL,
-					comments VARCHAR(255) NULL,
-					PRIMARY KEY (idxID))
-
-CREATE TABLE DailyVolCal(
-					dVolCalID int Identity NOT NULL,
-					symbl VARCHAR(15) NOT NULL,
 					dailyIV DECIMAL NOT NULL,
 					dPPSMove MONEY NOT NULL,
 					dPPSLow MONEY NOT NULL,
 					dPPSHigh MONEY NOT NULL,
+					calDate DATETIME NULL,
 					PRIMARY KEY (dVolCalID))
 
-
-
 CREATE TABLE CustomVolCal(
-						cVolCalID INT IDENTITY NOT NULL,
+						cVolCalID INT IDENTITY(1,1),
+						csymblID INT NULL,
 						symbl VARCHAR(15) NOT NULL,
+						pps MONEY NOT NULL,
+						iv DECIMAL NOT NULL,
 						customIV DECIMAL NOT NULL,
 						cPPSMove MONEY NOT NULL,
 						cPPSLow MONEY NOT NULL,
 						cPPSHigh MONEY NOT NULL,
 						daysCal INT NULL,
-						PRIMARY KEY (cVolCalID)) GO
+						calDate DATETIME NULL,
+						PRIMARY KEY (cVolCalID))
 
-CREATE INDEX idx_cVolCalID ON CustomVolCal (cVolCalID)
+
+ALTER TABLE CustomVolCal ADD CONSTRAINT FK_csymblID FOREIGN KEY (csymblID)
+REFERENCES CompInfo (symblID)
 GO
 
-CREATE INDEX idx_dVolCalID ON DailyVolCal (dVolCalID)
+ALTER TABLE DailyVolCal ADD CONSTRAINT FK_dSymblID FOREIGN KEY (dsymblID)
+REFERENCES CompInfo (symblID)
 GO
 
-CREATE INDEX idx_idxID ON IdxTbl (idxID)
-GO
-
-ALTER TABLE DailyVolCal ADD CONSTRAINT FK_dSymbl FOREIGN KEY (symbl)
-REFERENCES IdxTbl (symbl)
-GO
-
-ALTER TABLE CustomVolCal ADD CONSTRAINT FK_cSymbl FOREIGN KEY (symbl)
-REFERENCES IdxTbl (symbl)
-GO
-
---PROC NEEDS FIXED DB LOOKS GOOD , BREAK THE 1 PROC INTO 3 ?
-CREATE PROC dVolCalInsert
-(@Symbl VARCHAR(15), @Iv DECIMAL, @DailyIV DECIMAL, @CustomIV DECIMAL, @DPPSMove MONEY,  @DPPSLow MONEY, @DPPSHigh MONEY, @CPPSMove MONEY,
-@CPPSLow MONEY, @CPPSHigh MONEY, @DaysCal INT, @CalDate DATETIME)
+CREATE PROC insertDVolCal
+( @symbl VARCHAR(15), @pps MONEY, @iv DECIMAL, @dailyIV DECIMAL, @dPPSMove MONEY,  @dPPSLow MONEY, @dPPSHigh MONEY, @calDate DATETIME)
 AS
 	BEGIN
-		INSERT INTO DailyVolCal
-		VALUES (@Symbl, @Iv, @DailyIV, @CustomIV, @DPPSMove,  @DPPSLow, @DPPSHigh, @CPPSMove,@CPPSLow, @CPPSHigh, @DaysCal, @CalDate)
+		INSERT INTO DailyVolCal (symbl,pps,iv,dailyIV,dPPSMove,dPPSLow,dPPSHigh,calDate)
+		VALUES (@symbl, @pps, @iv, @dailyIV,  @dPPSMove,  @dPPSLow, @dPPSHigh, @calDate)
 		RETURN
 	END
 	GO
+
+CREATE PROC insertCVolCal
+(@Symbl VARCHAR(15), @PPS MONEY, @IV DECIMAL,@CustomIV DECIMAL,@CPPSMove MONEY,@CPPSLow MONEY, @CPPSHigh MONEY, @DaysCal INT, @CalDate DATETIME)
+AS
+	BEGIN
+		INSERT INTO CustomVolCal (symbl, pps, iv,customIV,cPPSMove,cPPSLow,cPPSHigh,daysCal,calDate)
+		VALUES (@Symbl, @PPS, @IV,@CustomIV,@CPPSMove,@CPPSLow, @CPPSHigh,  @DaysCal, @CalDate)
+		RETURN
+	END
+	GO
+
+	select * from DailyVolCal

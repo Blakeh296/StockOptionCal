@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace WindowsFormsApp1
 {
@@ -16,9 +17,11 @@ namespace WindowsFormsApp1
         PosCal posCal = new PosCal();
         SpreadCal spreadCal = new SpreadCal();
 
-        TrainingSellPuts tspForm = new TrainingSellPuts();
+        SqlConnection connString = new SqlConnection("DATA SOURCE=DESKTOP-UOELKEB; DATABASE=VolCalDB; Trusted_Connection=True;");
+
+        /*TrainingSellPuts tspForm = new TrainingSellPuts();
         TrainingBuyPuts tbpForm = new TrainingBuyPuts();
-        TrainingBuyCalls tbcForm = new TrainingBuyCalls();
+        TrainingBuyCalls tbcForm = new TrainingBuyCalls();*/
 
         public Form1()
         { InitializeComponent(); }
@@ -45,7 +48,14 @@ namespace WindowsFormsApp1
                     lbOutPut.Items.Add("IV Daily for "+tbIndexSymblTs.Text+ " : " + Math.Round(posCal.IvDailyResult, 2) * 100 + "% Custom IV :" + Math.Round(posCal.IvCustomResult,2) * 100 + "%");
                     lbOutPut.Items.Add(tbIndexSymblTs.Text + "Daily PPS Change +- : $" + Math.Round(posCal.PriceChangeDaily,2) + " Custom " + posCal.BusinessDays + " Day PPS range +- : $" + Math.Round(posCal.PriceChangeCustom,2));
                     lbOutPut.Items.Add("Price Range Daily for "+tbIndexSymblTs.Text+" : $" +Math.Round(posCal.PPSlowDaily,2)+" - $" +Math.Round(posCal.PPShighDaily,2));
-                    lbOutPut.Items.Add("Price Range for " + posCal.BusinessDays + " Days : $" + Math.Round(posCal.PPSlowCustom,2) + " - $" + Math.Round(posCal.PPShighCustom,2)); ;
+                    lbOutPut.Items.Add("Price Range for " + posCal.BusinessDays + " Days : $" + Math.Round(posCal.PPSlowCustom,2) + " - $" + Math.Round(posCal.PPShighCustom,2));
+
+                    SqlCommand cmd = connString.CreateCommand();
+                    cmd.CommandText = "EXEC insertDVolCal "+tbIndexSymblTs.Text+","+posCal.PricePerShare+","+Math.Round(posCal.IV,2)+","+Math.Round(posCal.IvDailyResult,2)+","+Math.Round(posCal.PriceChangeDaily,2)+","
+                        +posCal.PPSlowDaily+","+posCal.PPShighDaily+","+DateTime.Now;
+                    connString.Open();
+                    cmd.ExecuteNonQuery();
+                    connString.Close();
                 }
 
                 if (cbSpread.Checked == true)
